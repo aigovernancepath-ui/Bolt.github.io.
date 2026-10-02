@@ -1,0 +1,2261 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>THE GOVERNANCE ACADEMY — Become the AI Governance Expert in 10 Days</title>
+<style>
+  :root{
+    --gold:#c8a24a; --gold-2:#e8cf8a; --ink:#0d0f14;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  a{text-decoration:none;color:inherit}
+
+  /* ---------- NAV ---------- */
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(14px);
+      background:color-mix(in srgb, var(--background) 82%, transparent);
+      border-bottom:1px solid var(--border)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 22px;max-width:1180px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:1rem}
+  .brand .gem{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+    background:linear-gradient(135deg,#1b1f2a,#39405a);border:1px solid var(--gold);color:var(--gold-2);font-size:.85rem}
+  .brand small{display:block;font-weight:500;font-size:.6rem;letter-spacing:.22em;color:var(--muted-foreground);text-transform:uppercase}
+  .navlinks{display:flex;gap:20px;font-size:.86rem;color:var(--muted-foreground)}
+  .navlinks a:hover{color:var(--foreground)}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:10px 18px;font-weight:700;font-size:.85rem;
+    border:1px solid var(--border);background:var(--card);cursor:pointer;transition:.18s;font-family:inherit}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#191307;border-color:transparent;
+    box-shadow:0 6px 22px -8px rgba(200,162,74,.7)}
+  @media(max-width:820px){.navlinks{display:none}}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;padding:74px 0 58px}
+  .hero:before{content:"";position:absolute;inset:-40% -10% auto -10%;height:120%;
+    background:
+      radial-gradient(50% 42% at 18% 8%, rgba(200,162,74,.20), transparent 62%),
+      radial-gradient(42% 38% at 88% 4%, rgba(120,140,255,.16), transparent 62%);
+    pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  @media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--gold);border:1px solid color-mix(in srgb,var(--gold) 45%, transparent);border-radius:999px;padding:7px 15px;
+    background:color-mix(in srgb,var(--gold) 9%, transparent)}
+  h1{font-size:clamp(2.3rem,5.2vw,4rem);line-height:1.02;letter-spacing:-.035em;margin:20px 0 0;font-weight:800}
+  h1 .sh{background:linear-gradient(100deg,var(--gold-2),var(--gold) 55%,#f3e2b4);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{font-size:1.06rem;color:var(--muted-foreground);margin:18px 0 0;max-width:34rem;line-height:1.65}
+  .lede b{color:var(--foreground)}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;align-items:center}
+  .pricechip{display:inline-flex;align-items:baseline;gap:6px;font-weight:800;font-size:1.5rem;
+    border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);border-radius:14px;padding:8px 14px;
+    background:color-mix(in srgb,var(--gold) 8%,transparent)}
+  .pricechip span{font-size:.78rem;font-weight:600;color:var(--muted-foreground)}
+  .stats{display:flex;gap:26px;margin-top:32px;flex-wrap:wrap}
+  .stat b{display:block;font-size:1.5rem;font-weight:800}
+  .stat span{font-size:.74rem;color:var(--muted-foreground);letter-spacing:.08em;text-transform:uppercase}
+
+  .podium{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px;
+    box-shadow:0 30px 70px -40px rgba(0,0,0,.55);position:relative;overflow:hidden}
+  .podium:after{content:"";position:absolute;inset:auto -30% -55% -30%;height:70%;border-radius:50%;
+    background:radial-gradient(closest-side,color-mix(in srgb,var(--gold) 26%,transparent),transparent)}
+  .ringlg{display:flex;align-items:center;gap:14px;position:relative}
+  .medal{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;
+    background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#1a1408;font-weight:900;
+    box-shadow:0 0 0 5px color-mix(in srgb,var(--gold) 22%,transparent)}
+  .daylist{margin-top:18px;display:grid;gap:8px;position:relative}
+  .dayrow{display:flex;gap:11px;align-items:center;font-size:.82rem;padding:9px 12px;border-radius:11px;
+    border:1px solid var(--border);background:color-mix(in srgb,var(--foreground) 3%,transparent)}
+  .dayrow i{font-style:normal;width:44px;font-weight:800;color:var(--gold);font-size:.74rem;letter-spacing:.06em}
+  .dayrow em{font-style:normal;color:var(--muted-foreground);font-size:.76rem}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:60px 0}
+  .sechead{max-width:44rem}
+  .kick{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  h2{font-size:clamp(1.6rem,3.2vw,2.35rem);letter-spacing:-.03em;margin:10px 0 0;font-weight:800;line-height:1.1}
+  h2 + p{color:var(--muted-foreground);margin:14px 0 0;line-height:1.65}
+  .grid{display:grid;gap:16px;margin-top:30px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:940px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.g3,.g4,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;transition:.18s}
+  .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--gold) 42%,var(--border))}
+  .card h3{margin:12px 0 7px;font-size:1rem;font-weight:750;letter-spacing:-.01em}
+  .card p{margin:0;font-size:.86rem;color:var(--muted-foreground);line-height:1.6}
+  .ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-size:1.15rem;
+    background:color-mix(in srgb,var(--gold) 14%,transparent);border:1px solid color-mix(in srgb,var(--gold) 32%,transparent)}
+
+  /* ---------- CURRICULUM ---------- */
+  details.day{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:10px}
+  details.day[open]{border-color:color-mix(in srgb,var(--gold) 45%,var(--border))}
+  details.day summary{list-style:none;cursor:pointer;display:flex;gap:14px;align-items:center;padding:15px 18px;font-weight:650}
+  details.day summary::-webkit-details-marker{display:none}
+  .dnum{min-width:64px;font-size:.72rem;font-weight:800;letter-spacing:.1em;color:var(--gold)}
+  .dbody{padding:0 20px 18px 96px;color:var(--muted-foreground);font-size:.87rem;line-height:1.7}
+  .dbody b{color:var(--foreground)}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:999px;margin:6px 6px 0 0;
+    background:color-mix(in srgb,var(--primary) 13%,transparent);border:1px solid color-mix(in srgb,var(--primary) 30%,transparent);color:var(--foreground)}
+  @media(max-width:640px){.dbody{padding-left:22px}}
+
+  /* ---------- GAME ---------- */
+  .game{background:linear-gradient(160deg,color-mix(in srgb,var(--gold) 12%,var(--card)),var(--card));
+    border:1px solid color-mix(in srgb,var(--gold) 34%,var(--border));border-radius:22px;padding:26px;margin-top:28px}
+  .gsplit{display:grid;grid-template-columns:1fr 260px;gap:26px;align-items:start}
+  @media(max-width:860px){.gsplit{grid-template-columns:1fr}}
+  .q{font-size:1.12rem;font-weight:750;margin:6px 0 18px;letter-spacing:-.015em;line-height:1.4}
+  .opts{display:grid;gap:10px}
+  .opt{text-align:left;font-family:inherit;font-size:.9rem;padding:13px 16px;border-radius:12px;cursor:pointer;
+    border:1px solid var(--border);background:var(--background);color:var(--foreground);transition:.15s}
+  .opt:hover:not(:disabled){border-color:var(--gold);transform:translateX(3px)}
+  .opt:disabled{cursor:default;opacity:.72}
+  .opt.good{border-color:var(--success);background:color-mix(in srgb,var(--success) 15%,transparent);opacity:1}
+  .opt.bad{border-color:var(--destructive);background:color-mix(in srgb,var(--destructive) 15%,transparent);opacity:1}
+  .fb{margin-top:14px;font-size:.87rem;line-height:1.6;color:var(--muted-foreground);min-height:2.6em}
+  .fb b{color:var(--foreground)}
+  .hud{background:color-mix(in srgb,var(--foreground) 4%,transparent);border:1px solid var(--border);border-radius:16px;padding:18px}
+  .bar{height:9px;border-radius:999px;background:color-mix(in srgb,var(--foreground) 10%,transparent);overflow:hidden;margin-top:8px}
+  .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-2));transition:width .35s}
+  /* ---------- GAME: make the free quiz stand out ---------- */
+  #game{position:relative;padding:88px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    background:
+      radial-gradient(60% 46% at 50% 0%, color-mix(in srgb,var(--gold) 16%,transparent), transparent 70%),
+      color-mix(in srgb,var(--foreground) 3%,transparent)}
+  #game:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  #game .sechead{max-width:44rem}
+  #game .sechead h2{font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.025em;margin:12px 0 0}
+  #game .game{margin-top:34px;border-radius:24px;padding:30px;
+    background:linear-gradient(160deg,color-mix(in srgb,var(--gold) 14%,var(--card)),var(--card));
+    border:1px solid color-mix(in srgb,var(--gold) 42%,var(--border));
+    box-shadow:0 30px 70px -40px color-mix(in srgb,var(--gold) 80%,transparent),0 1px 0 color-mix(in srgb,var(--gold) 20%,transparent) inset}
+  #game .hud{border-radius:18px;background:color-mix(in srgb,var(--foreground) 5%,transparent);
+    border:1px solid color-mix(in srgb,var(--gold) 22%,var(--border))}
+  #game .q{font-size:1.16rem}
+  #game .btn-gold,#game .btn{transition:.18s}
+  #game .btn:hover:not(:disabled){transform:translateY(-2px)}
+  @media(max-width:820px){#game{padding:64px 0} #game .game{padding:22px}}
+  .scoreline{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted-foreground);margin-top:16px}
+  .streak{font-size:2rem;font-weight:900;letter-spacing:-.03em}
+
+  /* ---------- PILLARS ---------- */
+  .quote{border-left:3px solid var(--gold);padding:4px 0 4px 20px;margin:34px 0 0;font-size:1.2rem;
+    font-weight:600;letter-spacing:-.02em;line-height:1.5;max-width:44rem}
+
+  /* ---------- PRICE ---------- */
+  .offer{background:
+      radial-gradient(70% 120% at 12% 0%, rgba(200,162,74,.20), transparent 60%),
+      var(--card);
+    border:1px solid color-mix(in srgb,var(--gold) 42%,var(--border));border-radius:24px;padding:34px;margin-top:28px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+  @media(max-width:860px){.offer{grid-template-columns:1fr;gap:24px}}
+  .bigprice{font-size:clamp(3rem,8vw,4.6rem);font-weight:900;letter-spacing:-.05em;line-height:1;
+    background:linear-gradient(100deg,var(--gold-2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .incl{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+  .incl li{display:flex;gap:11px;font-size:.89rem;align-items:flex-start;line-height:1.55}
+  .incl li:before{content:"✦";color:var(--gold);font-size:.8rem;line-height:1.7}
+  .strike{text-decoration:line-through;color:var(--muted-foreground);font-size:.85rem;font-weight:600}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .tst{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px}
+  .tst p{margin:0;font-size:.9rem;line-height:1.65;font-style:italic}
+  .who{display:flex;align-items:center;gap:11px;margin-top:auto}
+  .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.8rem;
+    background:linear-gradient(135deg,#2b3040,#4a536e);color:#fff;border:1px solid var(--border)}
+  .who b{font-size:.83rem;display:block}
+  .who span{font-size:.72rem;color:var(--muted-foreground)}
+
+  /* ---------- FAQ ---------- */
+  details.faq{border-bottom:1px solid var(--border);padding:16px 0}
+  details.faq summary{cursor:pointer;list-style:none;font-weight:650;font-size:.94rem;display:flex;justify-content:space-between;gap:16px}
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary:after{content:"+";color:var(--gold);font-weight:800}
+  details.faq[open] summary:after{content:"–"}
+  details.faq p{margin:11px 0 0;font-size:.87rem;color:var(--muted-foreground);line-height:1.7;max-width:52rem}
+
+  /* ---------- FORM ---------- */
+  .signup{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:30px;margin-top:28px;
+    display:grid;grid-template-columns:.95fr 1.05fr;gap:30px}
+  @media(max-width:860px){.signup{grid-template-columns:1fr}}
+  label{display:block;font-size:.75rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-foreground);margin:0 0 6px}
+  input,select{width:100%;padding:12px 13px;border-radius:11px;font-family:inherit;font-size:.89rem;
+    background:var(--background);color:var(--foreground);border:1px solid var(--border);margin-bottom:14px}
+  input:focus,select:focus{outline:2px solid color-mix(in srgb,var(--gold) 55%,transparent);outline-offset:1px}
+  .okmsg{display:none;font-size:.88rem;color:var(--success);font-weight:650;margin-top:6px}
+
+  footer{border-top:1px solid var(--border);margin-top:40px;padding:34px 0 44px;font-size:.8rem;color:var(--muted-foreground)}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}
+  @media(max-width:820px){.fgrid{grid-template-columns:1fr 1fr}}
+  footer h4{color:var(--foreground);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
+  footer a{display:block;margin-bottom:8px}
+  footer a:hover{color:var(--foreground)}
+
+  /* ---------- NOTEBOOK (kid-friendly layer) ---------- */
+  .notebookbox{background:linear-gradient(160deg,#fff8e8,var(--card));border:2px dashed color-mix(in srgb,var(--gold) 55%,transparent);
+    border-radius:24px;padding:28px;margin-top:28px}
+  html[data-theme="dark"] .notebookbox{background:linear-gradient(160deg,color-mix(in srgb,var(--gold) 12%,var(--card)),var(--card))}
+  .rules{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+  @media(max-width:940px){.rules{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.rules{grid-template-columns:1fr}}
+  .rule{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;text-align:center}
+  .rule .big{font-size:2rem}
+  .rule b{display:block;margin:8px 0 4px;font-size:.95rem;letter-spacing:.04em}
+  .rule p{margin:0 0 8px;font-size:.8rem;color:var(--muted-foreground);line-height:1.55}
+  .rule em{font-style:normal;font-size:.75rem;display:block;padding:8px;border-radius:10px;
+    background:color-mix(in srgb,var(--gold) 12%,transparent);color:var(--foreground)}
+  .lights{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+  @media(max-width:940px){.lights{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.lights{grid-template-columns:1fr}}
+  .light{border-radius:16px;padding:16px;border:1px solid var(--border);background:var(--card)}
+  .light .dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;
+    background:color-mix(in srgb,var(--foreground) 8%,transparent)}
+  .light b{display:block;margin:9px 0 5px;font-size:.9rem}
+  .light span{font-size:.79rem;color:var(--muted-foreground);line-height:1.55}
+  .dogbox{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:22px;
+    font-size:.9rem;line-height:1.8;color:var(--muted-foreground)}
+  .dogbox b{color:var(--foreground)}
+
+  /* ---------- CROSSWALK TABLE ---------- */
+  .tablewrap{margin-top:26px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card)}
+  table{width:100%;border-collapse:collapse;font-size:.83rem}
+  th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6}
+  th{background:color-mix(in srgb,var(--gold) 11%,transparent);font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:800}
+  tbody tr:last-child td{border-bottom:none}
+  td:first-child{font-weight:700;color:var(--foreground);width:19%}
+  td{color:var(--muted-foreground)}
+  tbody tr:hover td{background:color-mix(in srgb,var(--foreground) 3%,transparent)}
+
+  /* ---------- CERT ROADMAP ---------- */
+  .rmap{display:grid;gap:12px;margin-top:26px}
+  .rstep{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--border);
+    border-radius:15px;padding:17px}
+  .rstep:hover{border-color:color-mix(in srgb,var(--gold) 45%,var(--border))}
+  .rnum{min-width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-weight:900;font-size:.85rem;
+    background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#191307}
+  .rstep h4{margin:0 0 4px;font-size:.94rem;font-weight:750}
+  .rstep p{margin:0;font-size:.83rem;color:var(--muted-foreground);line-height:1.6}
+  .rstep .meta{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:800;display:block;margin-bottom:3px}
+  .factgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+  @media(max-width:940px){.factgrid{grid-template-columns:repeat(2,1fr)}}
+  .fact{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center}
+  .fact b{display:block;font-size:1.4rem;font-weight:900;letter-spacing:-.03em}
+  .fact span{font-size:.72rem;color:var(--muted-foreground);text-transform:uppercase;letter-spacing:.08em}
+  .sched{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;align-items:center;font-size:.82rem}
+  .sched .pill{padding:7px 13px;border-radius:999px;border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);
+    background:color-mix(in srgb,var(--gold) 9%,transparent);font-weight:650}
+  .sched .arw{color:var(--gold)}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+/* ===== Bolt's confetti cannon (self-bootstrapping) ===== */
+(function(){
+  function install(){
+    var W=window.Bolt;
+    if(!W){ setTimeout(install, 40); return; }
+    if(W.__confettiInstalled) return;
+    W.__confettiInstalled=1;
+
+    function lib(){ return window.confetti || null; }
+    function shot(x, angle, y, scalar){
+      var C=lib(); if(!C) return;
+      C({ particleCount:110, angle: angle>0? 60 : 120, spread:58, startVelocity:52,
+          origin:{x:x,y:y}, colors:["#c8a24a","#e8cf8a","#a78bfa","#6366f1","#f3e2b4"],
+          zIndex:9999, scalar:scalar, ticks:280 });
+    }
+    W.confetti = function(mode){
+      var C=lib(); if(!C) return false;
+      var gold=["#c8a24a","#e8cf8a","#f3e2b4","#a78bfa","#6366f1","#ec4899"];
+      if(mode==="burst"){
+        C({ particleCount:140, spread:90, startVelocity:55, origin:{x:0.5,y:0.62},
+            colors:gold, zIndex:9999, scalar:1.1, ticks:280 });
+        return true;
+      }
+      if(mode==="cannons"){
+        shot(0, 0.2, 0.62, 1.05);
+        shot(1, -0.2, 0.62, 1.05);
+        shot(0.5, 0, 0.7, 1.2);
+        return true;
+      }
+      if(mode==="rain"){
+        var end=Date.now()+2200;
+        (function frame(){
+          C({ particleCount:3, spread:80, startVelocity:22, origin:{x:Math.random(),y:0.05},
+              colors:gold, zIndex:9999, ticks:240 });
+          if(Date.now()<end) requestAnimationFrame(frame);
+        })();
+        return true;
+      }
+      C({ particleCount:90, spread:70, startVelocity:45, origin:{x:0.5,y:0.6}, colors:gold, zIndex:9999, ticks:260 });
+      return true;
+    };
+    W.celebrate = function(){
+      if(!W.confetti("burst")) return false;
+      setTimeout(function(){ W.confetti("cannons"); }, 260);
+      setTimeout(function(){ W.confetti("rain"); }, 620);
+      setTimeout(function(){ W.confetti("burst"); }, 1700);
+      return true;
+    };
+    W.celebrateWhenReady = function(){
+      if(lib()) return W.celebrate();
+      var n=0;
+      var iv=setInterval(function(){
+        n++;
+        if(lib()){ clearInterval(iv); W.celebrate(); }
+        else if(n>24){ clearInterval(iv); }
+      },250);
+      return true;
+    };
+  }
+  install();
+})();
+</script>
+</head>
+<!-- ============ BOLT · robot dog mascot ============ -->
+<style id="bolt-tokens">
+:root{
+  --bolt-key:#c8a24a; --bolt-keyfg:#14100a; --bolt-card:#12151c; --bolt-fg:#f2f3f6; --bolt-line:rgba(200,162,74,.32);
+  --bolt-body:#1a1f2b;
+}
+html[data-boltdark="1"]{
+  --bolt-key:#a78bfa; --bolt-keyfg:#0f172a; --bolt-card:#0f172a; --bolt-fg:#e7e9f5; --bolt-line:rgba(167,139,250,.34);
+  --bolt-body:#141826;
+}
+#boltTab{position:fixed;right:22px;bottom:22px;z-index:9000;display:flex;align-items:center;gap:8px;
+  background:var(--bolt-card);color:var(--bolt-fg);border:1px solid var(--bolt-line);border-radius:999px;
+  padding:6px 14px 6px 6px;cursor:pointer;box-shadow:0 10px 30px -12px rgba(0,0,0,.55);transition:transform .25s}
+#boltTab:hover{transform:translateY(-3px)}
+#boltTab span{font-size:.74rem;font-weight:700;letter-spacing:.02em}
+#boltPanel{position:fixed;right:22px;bottom:92px;z-index:9001;width:344px;max-width:calc(100vw - 44px);
+  background:var(--bolt-card);color:var(--bolt-fg);border:1px solid var(--bolt-line);border-radius:18px;
+  padding:16px;box-shadow:0 24px 60px -18px rgba(0,0,0,.6);display:none}
+#boltPanel.open{display:block}
+#boltPanel h4{font-size:.95rem;margin:0 0 14px;font-weight:800;padding-right:20px;font-family:inherit}
+#boltStage{position:relative;height:132px;border:1px solid var(--bolt-line);border-radius:14px;overflow:hidden;
+  display:flex;align-items:flex-end;justify-content:center;margin-bottom:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),transparent)}
+#boltHero{transform-origin:50% 100%}
+#boltSay{font-size:.8rem;line-height:1.5;min-height:40px;display:flex;gap:8px;align-items:flex-start;margin-bottom:12px}
+.bolt-dot{width:8px;height:8px;border-radius:50%;background:var(--bolt-key);flex:0 0 8px;margin-top:6px;transition:.2s}
+#boltCtl{display:flex;gap:6px;flex-wrap:wrap}
+#boltCtl button{font:inherit;font-size:.72rem;font-weight:700;padding:7px 10px;border-radius:9px;cursor:pointer;
+  border:1px solid var(--bolt-line);background:transparent;color:var(--bolt-fg);transition:.2s}
+#boltCtl button:hover{border-color:var(--bolt-key);color:var(--bolt-key)}
+#boltCtl button.on{background:var(--bolt-key);border-color:var(--bolt-key);color:var(--bolt-keyfg)}
+#boltFloat{position:fixed;left:16px;bottom:14px;z-index:8999;display:flex;align-items:flex-end;gap:8px}
+#boltFloat .fb{background:var(--bolt-card);color:var(--bolt-fg);border:1px solid var(--bolt-line);border-radius:12px;
+  padding:7px 11px;font-size:.73rem;opacity:0;transition:.25s;pointer-events:none;max-width:240px;line-height:1.4}
+#boltFloat .fb.show{opacity:1}
+.bolt-mount{display:inline-flex;align-items:flex-end;cursor:pointer;vertical-align:middle}
+.bolt-card{border:1px solid var(--bolt-line);border-radius:16px;padding:12px 14px;background:var(--bolt-card);
+  color:var(--bolt-fg);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bolt-card .bn{font-size:.78rem;font-weight:800;display:block}
+.bolt-card .bh2{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;opacity:.6;display:block}
+.bolt-tbtn{font:inherit;font-size:.72rem;font-weight:700;padding:8px 12px;border-radius:10px;cursor:pointer;
+  border:1px solid var(--bolt-key);background:transparent;color:var(--bolt-key);transition:.2s}
+.bolt-tbtn:hover{background:var(--bolt-key);color:var(--bolt-keyfg)}
+.gopt{cursor:pointer}.gopt:hover{border-color:#6366f1!important;background:#f5f3ff!important}.gopt:disabled{cursor:default}
+</style>
+<div id="boltTab" title="Woof! Talk to Bolt"><span>Talk to Bolt</span></div>
+<div id="boltPanel" role="dialog" aria-label="Bolt, the robot dog mascot">
+  <h4>🦿 Bolt — your robot dog mascot</h4>
+  <div id="boltStage"><div id="boltHero"></div></div>
+  <div id="boltSay"><span class="bolt-dot"></span><span>Woof! I'm Bolt. Ask me anything — I'll read it out loud.</span></div>
+  <div id="boltCtl"></div>
+</div>
+<div id="boltFloat"><div class="fb"></div></div>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">
+      <div class="gem">✦</div>
+      <div>THE GOVERNANCE ACADEMY<small>AI Governance · Human Control</small></div>
+    </div>
+    <div class="navlinks">
+      <a href="#why">Why Now</a>
+      <a href="#curriculum">10 Days</a>
+      <a href="#game">Play</a>
+      <a href="#notebook">Notebook</a>
+      <a href="#frameworks">Frameworks</a>
+      <a href="#career">Career</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#book">For teams</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="btn btn-gold" onclick="go('signup')">Enroll — $29 →</button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">✦ Now includes the Learning Notebook and the NIST · ISO 42001 · EU AI Act crosswalk</span>
+      <h1>Become the <span class="sh">AI Governance Expert</span> the world is hiring for — in 10 days.</h1>
+      <p class="lede">You don't need a law degree or a data science PhD. In <b>10 focused days</b> you learn how to <b>govern AI instead of being governed by it</b> — through short lessons, memorable frameworks and games that make it stick. Then walk away with a certificate in your name and a language that gets you the promotion, the role, the client.</p>
+      <div class="cta">
+        <div class="pricechip">$29 <span>one price · lifetime access · everything unlocked</span></div>
+        <button class="btn btn-gold" onclick="go('signup')">Start Day 1 FREE →</button>
+        <button class="btn" onclick="go('curriculum')">See the 10 days</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>10</b><span>Days to expert</span></div>
+        <div class="stat"><b>12min</b><span>Avg. daily lesson</span></div>
+        <div class="stat"><b>40+</b><span>Countries welcome</span></div>
+        <div class="stat"><b>$29</b><span>Not $2,000</span></div>
+      </div>
+    </div>
+
+    <div class="podium">
+      <div class="ringlg">
+        <div class="medal">✦</div>
+        <div>
+          <div style="font-weight:800;letter-spacing:-.02em">Your 10-Day Ascent</div>
+          <div style="font-size:.78rem;color:var(--muted-foreground);margin-top:3px">Short. Playable. Remembered.</div>
+        </div>
+      </div>
+      <div class="daylist" id="daylist"></div>
+    </div>
+  </div>
+<!-- Bolt: hero buddy card -->
+<div id="boltBuddy" class="bolt-card" style="margin-top:22px;justify-content:space-between">
+  <span style="display:flex;align-items:center;gap:12px">
+    <span id="boltHeroDog" class="bolt-mount" data-bolt-scale="1.1"></span>
+    <span><span class="bn">Bolt</span><span class="bh2">Mascot · guards the docs · says things out loud</span></span>
+  </span>
+  <button id="boltBuddyBark" class="bolt-tbtn">Say hi 🐾</button>
+</div>
+</header>
+
+<!-- ================= WHY ================= -->
+<section id="why">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">Why governance, why now</div>
+      <h2>AI is moving fast. Expertise is moving slower. That gap is your opportunity.</h2>
+      <p>Organisations everywhere are being asked hard questions — about risk, fairness, transparency, accountability — and almost nobody on the floor can answer them. The people who can are the ones being promoted, hired and consulted. This is not about stopping AI. It is about keeping <b>humans in control of it</b>.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><div class="ico">⚖️</div><h3>The laws arrived</h3><p>EU AI Act, NIST AI RMF, ISO/IEC 42001 and a wave of national rules now expect documented governance. Fluency is no longer optional.</p></div>
+      <div class="card"><div class="ico">🚀</div><h3>Lead, don't lag</h3><p>Everyone can ask an AI a question. Far fewer can decide what an AI is allowed to do. That second skill is rare — and paid for.</p></div>
+      <div class="card"><div class="ico">🧠</div><h3>Built to remember</h3><p>Games, mnemonics and plain-language stories. No 400-page manual. You learn it in short bursts and recall it in meetings.</p></div>
+      <div class="card"><div class="ico">🌍</div><h3>For every sector</h3><p>Business, government, admin, healthcare, education, tech, data and audit. Governance is the shared language all of them need.</p></div>
+    </div>
+    <p class="quote">“The goal was never to make AI more powerful than people. It is to make people more capable than the AI they oversee.”</p>
+  </div>
+</section>
+
+<!-- ================= CURRICULUM ================= -->
+<section id="curriculum" style="background:color-mix(in srgb,var(--foreground) 2.5%,transparent)">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">The 10-day programme</div>
+      <h2>Ten days. Ten wins. One new professional identity.</h2>
+      <p>Each day: one short lesson, one mental model, one game, one real-world exercise you can use at work the same afternoon. Open any day to see what's inside.</p>
+    </div>
+    <div style="margin-top:30px" id="curriculum-list"></div>
+
+    <div class="grid g3" style="margin-top:34px">
+      <div class="card"><div class="ico">🎮</div><h3>Play to learn</h3><p>Bias-spotting drills, risk-triage games, "Does this break the Act?" rounds and timed red-team scenarios with a live scoreboard.</p></div>
+      <div class="card"><div class="ico">🧩</div><h3>Memory kits</h3><p>One-page cheat sheets, mnemonics and visual frameworks so you can explain governance to anyone — from the intern to the board.</p></div>
+      <div class="card"><div class="ico">📜</div><h3>Your certificate</h3><p>Finish all ten days and unlock a personalised certificate you can put in your name, on LinkedIn and in front of a client.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= LEARNING NOTEBOOK ================= -->
+<section id="notebook" style="background:color-mix(in srgb,var(--foreground) 2.5%,transparent)">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">The Learning Notebook · included free</div>
+      <h2>How do we keep AI safe? Ask a robot dog.</h2>
+      <p>A picture-book guide to the big rules grown-ups use so AI doesn't cause trouble. Written for curious kids — and, it turns out, the clearest explanation many professionals have ever read. Same four rules, no jargon. If you can understand a robot dog, you already understand the NIST AI Risk Management Framework.</p>
+    </div>
+
+    <div class="notebookbox">
+      <div class="dogbox" style="margin-top:0">
+        🐕 <b>Imagine you got a robot dog for your birthday.</b> It can fetch your slippers, do tricks, and even talk! But… what if it doesn't understand <b>"sit"</b>, or knocks over grandma's vase, or shares your secrets with the neighbour's robot?
+        <br><br>That <b>"what could go wrong"</b> feeling is called <b>risk</b>. Grown-ups built a set of rules to help people make AI — and robot dogs — safely. Here are the 4 big rules 👇
+      </div>
+
+      <div class="rules">
+        <div class="rule"><div class="big">🏛️</div><b>GOVERN</b><p>Make the family rules before you even get the robot dog.</p><em>"No robot dogs near the pool" — decided ahead of time.</em></div>
+        <div class="rule"><div class="big">🗺️</div><b>MAP</b><p>Figure out what it will actually be used for, and who might be affected.</p><em>It fetches slippers in the living room — not babysit the baby!</em></div>
+        <div class="rule"><div class="big">📏</div><b>MEASURE</b><p>Test it! See how often it messes up, and write it down.</p><em>It fetched slippers correctly 9 out of 10 times.</em></div>
+        <div class="rule"><div class="big">🛠️</div><b>MANAGE</b><p>Fix the problems you find — or turn it off if it's too risky.</p><em>It keeps knocking the vase, so move the vase or retrain it.</em></div>
+      </div>
+
+      <p style="text-align:center;margin:20px 0 0;font-weight:700;font-size:.9rem">🔁 You don't do this once — you loop through all 4, forever, as long as you use the AI.</p>
+
+      <h3 style="margin:34px 0 0;font-size:1.1rem;letter-spacing:-.02em">🚦 The traffic-light rule book (Europe's AI law)</h3>
+      <p style="color:var(--muted-foreground);font-size:.88rem;margin:8px 0 0">Some countries turned this into an actual law. It sorts every AI into four colours:</p>
+      <div class="lights">
+        <div class="light"><div class="dot" style="background:color-mix(in srgb,var(--destructive) 22%,transparent)">🚫</div><b>Banned</b><span>Not allowed at all — like AI that spies on everyone's behaviour to score them.</span></div>
+        <div class="light"><div class="dot" style="background:color-mix(in srgb,var(--warning) 25%,transparent)">⚠️</div><b>High Risk</b><span>Big rules to follow — like AI deciding who gets hired or a loan.</span></div>
+        <div class="light"><div class="dot" style="background:color-mix(in srgb,var(--chart-4) 25%,transparent)">💬</div><b>Just Be Honest</b><span>Must tell you it's AI — like a chatbot or a deepfake video.</span></div>
+        <div class="light"><div class="dot" style="background:color-mix(in srgb,var(--success) 25%,transparent)">✅</div><b>No Big Deal</b><span>Totally fine — like a spam filter or a video game character.</span></div>
+      </div>
+
+      <div class="game" style="margin-top:26px">
+        <div class="gsplit">
+          <div>
+            <span class="kick" id="nk-round">Notebook quiz · Question 1 of 5</span>
+            <div class="q" id="nk-q">Loading…</div>
+            <div class="opts" id="nk-opts"></div>
+            <div class="fb" id="nk-fb">Pick an answer — the explanation is the fun part.</div>
+            <div style="margin-top:14px"><button class="btn" id="nk-next" disabled onclick="nkNext()">Next question →</button></div>
+          </div>
+          <div class="hud">
+            <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Stickers earned</div>
+            <div class="streak" id="nk-score" style="margin-top:6px">0 ⭐</div>
+            <div class="bar"><i id="nk-bar"></i></div>
+            <div style="font-size:.74rem;color:var(--muted-foreground);margin-top:16px;line-height:1.6">Five questions. The same four rules as the professional track — just in a friendlier voice. This is the warm-up before Day 1.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GAME ================= -->
+<section id="game">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">Try it now — no sign-up</div>
+      <h2>Play 5 rounds. See how governance thinking actually feels.</h2>
+      <p>This is the same style of game you'll play inside the programme. Answer, learn, climb the leaderboard of yourself.</p>
+    </div>
+
+    <div class="game">
+      <div class="gsplit">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="kick" id="roundlbl">Round 1 of 5</span>
+            <span style="font-size:.76rem;color:var(--muted-foreground)" id="lvl">Rank: Observer</span>
+          </div>
+          <div class="q" id="q">Loading…</div>
+          <div class="opts" id="opts"></div>
+          <div class="fb" id="fb">Pick an answer — you'll get the reasoning either way.</div>
+          <div style="margin-top:14px"><button class="btn" id="next" disabled onclick="nextQ()">Next round →</button></div>
+        </div>
+        <div class="hud">
+          <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Score</div>
+          <div class="scoreline" style="margin-top:2px"><span>Correct</span><b id="sc">0</b></div>
+          <div class="bar"><i id="bar"></i></div>
+          <div class="scoreline"><span>Streak</span><span class="streak" id="streak" style="font-size:1.1rem">0</span></div>
+          <div class="scoreline"><span>Governance XP</span><b id="xp">0</b></div>
+          <div style="font-size:.74rem;color:var(--muted-foreground);margin-top:16px;line-height:1.6" id="ranknote">Answer correctly to rise: Observer → Steward → Guardian → Architect.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FRAMEWORKS CROSSWALK ================= -->
+<section id="frameworks">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">The rulebooks, side by side</div>
+      <h2>NIST, ISO 42001 and the EU AI Act — in one table.</h2>
+      <p>This is the crosswalk we teach on Day 7, and the single most useful page in the programme. Read it once and you'll never again confuse a voluntary framework with binding law. One control framework can satisfy all three — you just have to map it once.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Concern</th><th>NIST AI RMF</th><th>ISO/IEC 42001</th><th>EU AI Act</th></tr></thead>
+        <tbody>
+          <tr><td>What it is</td><td>Voluntary risk-management guidance (US)</td><td>Certifiable management-system standard (global)</td><td>Binding law (EU market)</td></tr>
+          <tr><td>Core structure</td><td>4 functions: <b>Govern, Map, Measure, Manage</b></td><td>Management-system clauses (context, leadership, planning, support, operation, evaluation, improvement) + Annex A controls</td><td>Risk tiers: unacceptable, high-risk, limited-risk, minimal-risk</td></tr>
+          <tr><td>Governance &amp; oversight</td><td>Govern function — policies, accountability, culture</td><td>Clause 5 (Leadership) + Annex A.2 (AI policy)</td><td>Conformity assessment + human oversight obligations (Art. 14) for high-risk systems</td></tr>
+          <tr><td>Risk identification</td><td>Map function — context, use case, impact</td><td>Clause 6 (Planning) — risk &amp; impact assessment</td><td>Risk-tier classification (Annex III lists high-risk use cases)</td></tr>
+          <tr><td>Risk measurement</td><td>Measure function — testing, metrics, bias/robustness</td><td>Annex A.6 (data), A.7 (resources), performance monitoring</td><td>Technical documentation, conformity assessment, testing (Art. 9–15)</td></tr>
+          <tr><td>Ongoing management</td><td>Manage function — response, monitoring, improvement</td><td>Clauses 9–10 (Evaluation, Improvement) — internal audit, corrective action</td><td>Post-market monitoring (Art. 72), incident reporting</td></tr>
+          <tr><td>Certifiable?</td><td>No — self-assessed framework</td><td>Yes — third-party certification available</td><td>N/A — legal compliance, enforced by regulators and fines</td></tr>
+          <tr><td>Best used for</td><td>Internal maturity model, common vocabulary</td><td>Building an auditable AI management system</td><td>Determining legal obligations for EU-market AI systems</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card"><div class="ico">🗣️</div><h3>NIST gives the vocabulary</h3><p>Four functions — Govern, Map, Measure, Manage — that everyone in the room can share, in any sector, in any country.</p></div>
+      <div class="card"><div class="ico">🏗️</div><h3>ISO gives the system</h3><p>An auditable management system with clauses and controls, so good intentions become evidence a third party can check.</p></div>
+      <div class="card"><div class="ico">⚖️</div><h3>The AI Act gives the tiers</h3><p>Legal risk tiers that decide how hard you apply the other two. High-risk EU system: full weight. Minimal-risk internal tool: lightweight.</p></div>
+    </div>
+    <p class="quote">"A high-risk EU system needs the full weight of both frameworks. A minimal-risk internal tool may only need lightweight NIST-style governance. Knowing which is which <em>is</em> the job."</p>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATION ROADMAP ================= -->
+<section id="career" style="background:color-mix(in srgb,var(--foreground) 2.5%,transparent)">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">Where this takes your career</div>
+      <h2>From 10 days to a credential the market recognises.</h2>
+      <p>Your Academy certificate proves you completed a structured ten-day curriculum in your own name. When you're ready to go further, here is the credential path that pairs naturally with AI governance — and the honest numbers on the most requested one.</p>
+    </div>
+
+    <h3 style="margin:34px 0 0;font-size:1.1rem;letter-spacing:-.02em">📘 The wider credential landscape</h3>
+    <div class="factgrid">
+      <div class="fact"><b>100</b><span>Qs (IAPP AIGP)</span></div>
+      <div class="fact"><b>2.75h</b><span>Exam + 15-min break</span></div>
+      <div class="fact"><b>300/500</b><span>Their passing score</span></div>
+      <div class="fact"><b>$649</b><span>Their fee · $799 non-member</span></div>
+    </div>
+    <p style="color:var(--muted-foreground);font-size:.85rem;margin:16px 0 0;line-height:1.7">These figures describe a third-party certification as published by its own provider, for planning context only — check their site for current terms. <b>Your Academy certificate is your own:</b> awarded by us for completing the 10-day programme, with no external exam and no dependency on anyone else's credential.</p>
+
+    <h3 style="margin:40px 0 0;font-size:1.1rem;letter-spacing:-.02em">🎯 Your AI Governance path — and where it can lead</h3>
+    <div class="rmap">
+      <div class="rstep"><div class="rnum">01</div><div><span class="meta">Start here — ours</span><h4>AI Governance Expert — the Academy certificate</h4><p>Your own credential, awarded on completion of the 10-day programme. No external exam, no third-party dependency — you finish and it is yours.</p></div></div>
+      <div class="rstep"><div class="rnum">02</div><div><span class="meta">Optional, third-party</span><h4>IAPP AIGP — if you want an external credential</h4><p>A separate certification run by IAPP, not by us. Some employers ask for it. We are not a training partner and do not sell or run their exam — we simply tell you it exists.</p></div></div>
+      <div class="rstep"><div class="rnum">03</div><div><span class="meta">Optional, third-party</span><h4>ISO/IEC 42001 Lead Implementer</h4><p>Hands-on training to actually stand up an AI management system. Choose Lead Auditor instead if you're heading toward audit-facing governance roles.</p></div></div>
+      <div class="rstep"><div class="rnum">04</div><div><span class="meta">Optional, third-party</span><h4>CIPM — Certified Information Privacy Manager</h4><p>Turns policy into a running programme: charters, KPIs, DSAR handling. Maps directly onto portfolio and governance work.</p></div></div>
+      <div class="rstep"><div class="rnum">05</div><div><span class="meta">Optional, third-party</span><h4>CRISC</h4><p>A broadly recognised risk and control credential in financial services and insurance. Strengthens model-risk and enterprise-risk credibility.</p></div></div>
+    </div>
+    <div class="sched">
+      <span style="color:var(--muted-foreground)">Ours, then optional external ones:</span>
+      <span class="pill" style="font-weight:800">Academy AI Governance Expert</span><span class="arw">→</span>
+      <span class="pill">CIPP/E or CIPP/US</span><span class="arw">→</span>
+      <span class="pill">ISO 42001 Lead Implementer</span><span class="arw">→</span>
+      <span class="pill">CIPM</span><span class="arw">→</span>
+      <span class="pill">CRISC</span>
+    </div>
+    <p class="quote">"Understand AI governance → operationalise privacy → build an auditable management system → run the programme → manage enterprise risk. A story-driven path, not a random pile of badges."</p>
+  </div>
+</section>
+
+<!-- ================= OFFER ================= -->
+<section id="offer">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">One price. No tiers. Everything unlocked.</div>
+      <h2>$29. That is the whole thing.</h2>
+      <p>Courses covering this material routinely charge hundreds or thousands. We don't believe expertise should be gated by budget. One price, worldwide, with everything included — forever.</p>
+    </div>
+
+    <div class="offer">
+      <div>
+        <div style="font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-foreground)">All-access enrolment</div>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-top:8px;flex-wrap:wrap">
+          <div class="bigprice">$29</div>
+          <div><div class="strike">$1,900 typical elsewhere</div><div style="font-size:.78rem;color:var(--muted-foreground)">one-time · no subscription</div></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+          <button class="btn btn-gold" onclick="go('signup')">Enrol me now →</button>
+          <button class="btn">Download the syllabus (PDF)</button>
+        </div>
+        <p style="font-size:.8rem;color:var(--muted-foreground);margin-top:16px">Team or classroom? Group licences and instructor packs available on request. Scholarships on request — nobody is turned away for the price.</p>
+      </div>
+      <ul class="incl">
+        <li>All 10 days, fast-paced and fully self-paced — video, reading and audio versions, with Bolt the robot dog as your mascot guiding every step</li>
+        <li>Games, drills, scoreboards and leaderboards</li>
+        <li>Cheat sheets, templates and policy document packs</li>
+        <li>EU AI Act · NIST AI RMF · ISO/IEC 42001 crosswalk, plus OECD</li>
+        <li>🐕 The Learning Notebook — the robot-dog picture-book guide</li>
+        <li>The AI Governance path — where the career can take you, ours and optional external credentials</li>
+        <li>Personalised certificate you create and own</li>
+        <li>Lifetime access + all future updates, free</li>
+        <li>Career kit: CV lines, interview answers, consulting deck</li>
+        <li>Community access — global professionals, all sectors</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="voices" style="background:color-mix(in srgb,var(--foreground) 2.5%,transparent)">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">Early voices</div>
+      <h2>What the first cohort is saying.</h2>
+      <p>Placeholder testimonials below — we're collecting the real ones from our first employees and learners now. Send me your quotes and names and I'll swap these in.</p>
+    </div>
+    <div class="grid g3">
+      <div class="tst"><p>“Ten days was enough for me to stop nodding along in AI risk meetings and start leading them. The games are what made it stick.”</p><div class="who"><div class="av">AM</div><div><b>Amara M.</b><span>Compliance Officer</span></div></div></div>
+      <div class="tst"><p>“I came in from product with zero governance background. I left able to read the EU AI Act and say what actually applies to my roadmap.”</p><div class="who"><div class="av">DK</div><div><b>Dmitri K.</b><span>Product Manager</span></div></div></div>
+      <div class="tst"><p>“The certificate and the one-pagers did the talking for me. I now run a small AI governance advisory on the side.”</p><div class="who"><div class="av">SO</div><div><b>Sofia O.</b><span>Consultant</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= WHO WE SERVE ================= -->
+<section id="serve" style="padding:76px 0" data-src="runable-plan-scenario-3">
+  <div class="wrap">
+    <span class="eyebrow">Who we serve</span>
+    <h2 style="font-size:clamp(1.7rem,3.4vw,2.3rem);margin:18px 0 0;letter-spacing:-.03em">Two doors into the same discipline.</h2>
+    <p style="color:var(--muted-foreground);margin:14px 0 0;max-width:44rem;line-height:1.75">Some people arrive wanting a credential. Some arrive because a board asked a question nobody could answer. Both are welcome — the foundations are the same, the depth is not.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px">
+        <div style="font-size:1.35rem">🎓</div>
+        <b style="display:block;margin:13px 0 7px;font-size:1.1rem">Individuals building credibility</b>
+        <p style="font-size:.88rem;color:var(--muted-foreground);line-height:1.7">Compliance officers, product managers, lawyers, IT leads, auditors and career-changers who want to be the person in the room who understands AI risk — and can prove it.</p>
+        <ul style="margin:15px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:.85rem;color:var(--muted-foreground)">
+          <li>→ The 10-day programme, certificate included</li>
+          <li>→ Games, memory kits and cheat sheets</li>
+          <li>→ Career kit: CV lines, interview answers, deck</li>
+        </ul>
+        <a href="#enrol" class="btn btn-gold" style="margin-top:18px">Start as an individual — $29 →</a>
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px">
+        <div style="font-size:1.35rem">🏛️</div>
+        <b style="display:block;margin:13px 0 7px;font-size:1.1rem">Organisations training a team</b>
+        <p style="font-size:.88rem;color:var(--muted-foreground);line-height:1.7">Boards, executive teams and leadership groups who need shared vocabulary before the audit lands — not a library of PDFs nobody reads.</p>
+        <ul style="margin:15px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:.85rem;color:var(--muted-foreground)">
+          <li>→ Cohort seats at team pricing</li>
+          <li>→ Board briefing and framework crosswalk</li>
+          <li>→ Your policies reviewed against NIST and the AI Act</li>
+        </ul>
+        <a href="#book" class="btn" style="margin-top:18px">Book a discovery call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= FOUNDATIONS OUTCOME ================= -->
+<section id="foundations-goal" style="padding:76px 0;border-top:1px solid var(--border)" data-src="runable-foundations-goal-2026-09-27">
+  <div class="wrap">
+    <span class="eyebrow">The goal of the $29 Foundations package</span>
+    <h2 style="font-size:clamp(1.7rem,3.4vw,2.35rem);margin:18px 0 0;letter-spacing:-.03em;max-width:48rem">Become familiar with the seven foundations of AI governance.</h2>
+    <p style="color:var(--muted-foreground);margin:14px 0 0;max-width:54rem;line-height:1.75">The free page shows the structure and small previews. The full self-study documentation package unlocks after the $29 payment, so learners can work through the complete material, glossary, games, quizzes and certificate path.</p>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px">
+      <div style="border:1px solid var(--border);border-radius:18px;padding:20px;background:var(--card)"><b>1 · Foundations of artificial intelligence</b><p style="margin:8px 0 0;color:var(--muted-foreground);font-size:.88rem;line-height:1.7">Defines AI and machine learning, presents the different types of AI systems and use cases, and positions AI models in the broader socio-cultural context.</p></div>
+      <div style="border:1px solid var(--border);border-radius:18px;padding:20px;background:var(--card)"><b>2 · AI impacts and responsible principles</b><p style="margin:8px 0 0;color:var(--muted-foreground);font-size:.88rem;line-height:1.7">Outlines the core risks and harms posed by AI systems, the characteristics of trustworthy AI systems, and the principles essential to responsible and ethical AI.</p></div>
+      <div style="border:1px solid var(--border);border-radius:18px;padding:20px;background:var(--card)"><b>3 · AI governance and risk management</b><p style="margin:8px 0 0;color:var(--muted-foreground);font-size:.88rem;line-height:1.7">Examines how to build AI governance in practice, including major stakeholders, roles and responsibilities, and identifying and managing risks.</p></div>
+      <div style="border:1px solid var(--border);border-radius:18px;padding:20px;background:var(--card)"><b>4 · AI regulation</b><p style="margin:8px 0 0;color:var(--muted-foreground);font-size:.88rem;line-height:1.7">Describes relevant global laws and key points on terminology, risk levels, requirements, governance and enforcement in AI-specific regulation.</p></div>
+      <div style="border:1px solid var(--border);border-radius:18px;padding:20px;background:var(--card)"><b>5 · Other laws that apply to AI</b><p style="margin:8px 0 0;color:var(--muted-foreground);font-size:.88rem;line-height:1.7">Surveys existing laws that govern AI, gives awareness of liability reform, and shows how privacy, intellectual property and other legal frameworks intersect with AI applications.</p></div>
+      <div style="border:1px solid var(--border);border-radius:18px;padding:20px;background:var(--card)"><b>6 · Governing AI development</b><p style="margin:8px 0 0;color:var(--muted-foreground);font-size:.88rem;line-height:1.7">Explains governance considerations for planning, designing and building AI systems, including governing data collection and data use in design and development.</p></div>
+      <div style="border:1px solid var(--border);border-radius:18px;padding:20px;background:var(--card)"><b>7 · Governing AI deployment</b><p style="margin:8px 0 0;color:var(--muted-foreground);font-size:.88rem;line-height:1.7">Addresses best practices for preparing and executing AI deployment, plus post-implementation monitoring, improvement and oversight.</p></div>
+      <div style="border:1px solid color-mix(in srgb,var(--primary) 28%,var(--border));border-radius:18px;padding:20px;background:color-mix(in srgb,var(--primary) 7%,var(--card))"><b>Unlock rule</b><p style="margin:8px 0 0;color:var(--muted-foreground);font-size:.88rem;line-height:1.7">Before payment, learners see previews only. After the $29 payment, they receive the private access link by email and get the full learning package as materials are released.</p></div>
+    </div>
+    <div style="margin-top:24px"><a href="#signup" class="btn btn-gold">Pay $29 and unlock the Foundations package →</a></div>
+  </div>
+</section>
+<!-- ================= PRICING ================= -->
+<section id="pricing" style="padding:76px 0;border-top:1px solid var(--border)" data-src="runable-plan-scenario-3">
+  <div class="wrap">
+    <span class="eyebrow">Three ways in</span>
+    <h2 style="font-size:clamp(1.7rem,3.4vw,2.3rem);margin:18px 0 0;letter-spacing:-.03em">Pick the depth you actually need.</h2>
+    <p style="color:var(--muted-foreground);margin:14px 0 0;max-width:44rem;line-height:1.75">No tiers gated behind a sales call. Prices in USD, GBP and EUR. The $29 button is ready for your secure checkout link; enrolment questions go to Gmail until the live payment link is added.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;display:flex;flex-direction:column">
+        <div style="font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-foreground)">Foundations</div>
+        <div style="font-size:2rem;font-weight:800;margin:13px 0 2px;letter-spacing:-.03em">$29</div>
+        <div style="font-size:.72rem;color:var(--muted-foreground)">≈ £23 / €27 · one-time</div>
+        <p style="font-size:.85rem;color:var(--muted-foreground);line-height:1.65;margin:13px 0 0">The self-study documentation package: the full 10-day programme, glossary, prepared study materials, all games, all quizzes, memory kits and your certificate. Self-paced.</p>
+        <ul style="margin:15px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:.84rem;color:var(--muted-foreground);flex:1">
+          <li>✓ 10 short days, 10–20 min each</li>
+          <li>✓ All games and quizzes unlocked after payment</li>
+          <li>✓ AI Governance Glossary and study documents</li>
+          <li>✓ Certificate of completion</li>
+          <li>✓ Lifetime updates as rules change</li>
+        </ul>
+        <a href="#enrol" class="btn btn-gold" style="margin-top:20px;justify-content:center">Enrol — $29 →</a>
+      </div>
+      <div id="practCard" data-placeholder-state="soldout" style="background:var(--card);border:1px solid var(--gold);border-radius:18px;padding:26px;display:flex;flex-direction:column;position:relative;box-shadow:0 20px 50px -30px rgba(200,162,74,.75)">
+        <div style="position:absolute;top:-11px;left:26px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#191307;padding:4px 12px;border-radius:999px;font-weight:800">Most chosen</div>
+        <div style="position:absolute;top:-11px;right:26px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;background:#f97316;color:#fff;padding:4px 12px;border-radius:999px;font-weight:800">Cohort full</div>
+        <div style="font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)">Practitioner</div>
+        <div style="display:flex;align-items:baseline;gap:9px;margin:13px 0 2px">
+          <span style="font-size:2rem;font-weight:800;letter-spacing:-.03em">$149</span>
+          <span style="font-size:.72rem;color:var(--muted-foreground);text-decoration:line-through">≈ £117 / €137</span>
+        </div>
+        <div style="font-size:.72rem;color:var(--muted-foreground)">per person · waitlist for the next cohort</div>
+        <p style="font-size:.85rem;color:var(--muted-foreground);line-height:1.65;margin:13px 0 0">Everything in Foundations, plus live cohorts, your own work reviewed, and a full AI governance leadership path.</p>
+        <ul style="margin:15px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:.84rem;color:var(--muted-foreground);flex:1">
+          <li>✓ Everything in Foundations</li>
+          <li>✓ Fortnightly live cohort sessions</li>
+          <li>✓ Your AI policy reviewed by a practitioner</li>
+          <li>✓ AI governance leadership drills and scenario bank</li>
+          <li>✓ Red-team workshop on Day 10</li>
+        </ul>
+        <button id="practWait" type="button" class="btn" style="margin-top:20px;justify-content:center;width:100%">Join the waitlist →</button>
+        <p id="practNote" style="display:none;font-size:.76rem;color:var(--muted-foreground);margin:10px 0 0;line-height:1.6"></p>
+        <p style="font-size:.6rem;color:var(--muted-foreground);margin:10px 0 0;letter-spacing:.08em;text-transform:uppercase">Placeholder state — remove data-placeholder-state="soldout" to restore live enrolment</p>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;display:flex;flex-direction:column">
+        <div style="font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-foreground)">Advisory</div>
+        <div style="font-size:2rem;font-weight:800;margin:13px 0 2px;letter-spacing:-.03em">From $2,400</div>
+        <div style="font-size:.72rem;color:var(--muted-foreground)">≈ £1,890 / €2,210 · per engagement</div>
+        <p style="font-size:.85rem;color:var(--muted-foreground);line-height:1.65;margin:13px 0 0">For an organisation that needs an AI management system built, not just understood. Scoped per engagement.</p>
+        <ul style="margin:15px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:.84rem;color:var(--muted-foreground);flex:1">
+          <li>✓ Framework crosswalk for your sector</li>
+          <li>✓ Risk tiering and intake policy drafted with you</li>
+          <li>✓ Board briefing session</li>
+          <li>✓ Evidence pack for audit or certification</li>
+        </ul>
+        <a href="#book" class="btn" style="margin-top:20px;justify-content:center">Scope an engagement →</a>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:.8rem;color:var(--muted-foreground);margin-top:20px">Placeholder pricing for review — swap in final numbers without rebuilding the layout.</p>
+  </div>
+</section>
+
+<!-- ================= CREDIBILITY ================= -->
+<section id="credibility" style="padding:76px 0;border-top:1px solid var(--border)" data-src="runable-plan-scenario-3">
+  <div class="wrap">
+    <span class="eyebrow">Why trust us</span>
+    <h2 style="font-size:clamp(1.7rem,3.4vw,2.2rem);margin:18px 0 0;letter-spacing:-.03em">Taught by people who have sat in the room.</h2>
+    <p style="color:var(--muted-foreground);margin:14px 0 0;max-width:44rem;line-height:1.75">Built on the frameworks regulators and auditors actually use — written by practitioners who have had to answer for them.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:15px;padding:20px">
+        <div style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Frameworks</div>
+        <b style="display:block;margin-top:9px;font-size:.92rem">NIST AI RMF · EU AI Act</b>
+        <p style="font-size:.8rem;color:var(--muted-foreground);line-height:1.6;margin:7px 0 0">Plus ISO/IEC 42001, OECD AI Principles and SR 11-7 guidance.</p>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:15px;padding:20px">
+        <div style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Written in</div>
+        <b style="display:block;margin-top:9px;font-size:.92rem">Plain language first</b>
+        <p style="font-size:.8rem;color:var(--muted-foreground);line-height:1.6;margin:7px 0 0">No jargon wall. If you can read a work email, you can finish this.</p>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:15px;padding:20px">
+        <div style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Updated</div>
+        <b style="display:block;margin-top:9px;font-size:.92rem">As the rules move</b>
+        <p style="font-size:.8rem;color:var(--muted-foreground);line-height:1.6;margin:7px 0 0">The EU AI Act is still phasing in. Access includes every update.</p>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:15px;padding:20px">
+        <div style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Format</div>
+        <b style="display:block;margin-top:9px;font-size:.92rem">10 days, not 10 weeks</b>
+        <p style="font-size:.8rem;color:var(--muted-foreground);line-height:1.6;margin:7px 0 0">Concept, story, game, recall test — built around how memory works.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:17px;padding:24px;margin-top:18px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+      <div style="max-width:32rem">
+        <b style="display:block;font-size:1.05rem">Placeholder for team, credentials and partners.</b>
+        <p style="font-size:.85rem;color:var(--muted-foreground);line-height:1.7;margin:7px 0 0">Drop in real bios, logos and accreditation badges here when final — the layout takes them without a rebuild.</p>
+      </div>
+      <a href="#book" class="btn btn-gold">Book a discovery call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOK A DISCOVERY CALL ================= -->
+<section id="book" style="padding:76px 0;border-top:1px solid var(--border)" data-src="runable-plan-scenario-4">
+  <div class="wrap" style="max-width:720px">
+    <span class="eyebrow">Book a 30-minute call</span>
+    <h2 style="font-size:clamp(1.7rem,3.4vw,2.2rem);margin:18px 0 0;letter-spacing:-.03em">Tell us what you're up against.</h2>
+    <p style="color:var(--muted-foreground);margin:14px 0 0;line-height:1.75">For teams, boards and anyone weighing the Advisory route. Thirty minutes, no pitch deck — we'll map your situation to the frameworks that apply.</p>
+
+    <form id="bookform" style="margin-top:26px;display:grid;gap:13px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px">
+        <label style="display:grid;gap:6px"><span style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Name</span>
+          <input type="text" name="name" required placeholder="Your name" style="padding:11px 13px;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--foreground);font:inherit;font-size:.87rem"></label>
+        <label style="display:grid;gap:6px"><span style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Organisation</span>
+          <input type="text" name="org" placeholder="Where you work" style="padding:11px 13px;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--foreground);font:inherit;font-size:.87rem"></label>
+      </div>
+      <label style="display:grid;gap:6px"><span style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Email</span>
+        <input type="email" name="email" required placeholder="you@example.com" style="padding:11px 13px;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--foreground);font:inherit;font-size:.87rem"></label>
+      <label style="display:grid;gap:6px"><span style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">What are you looking for?</span>
+        <select name="intent" style="padding:11px 13px;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--foreground);font:inherit;font-size:.87rem">
+          <option>Committee or board briefing</option>
+          <option>Team training (Practitioner cohort)</option>
+          <option>Advisory engagement — build our AI management system</option>
+          <option>Individual — just the $29 programme</option>
+        </select></label>
+      <label style="display:grid;gap:6px"><span style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground)">Anything we should know?</span>
+        <textarea name="notes" rows="3" placeholder="Deadlines, audit dates, sector, current frameworks…" style="padding:11px 13px;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--foreground);font:inherit;font-size:.87rem;resize:vertical"></textarea></label>
+      <button type="submit" class="btn btn-gold" style="justify-self:start;padding:12px 24px">Request the call →</button>
+      <p id="bookmsg" style="display:none;font-size:.85rem;color:var(--muted-foreground);margin:2px 0 0"></p>
+      <p style="font-size:.75rem;color:var(--muted-foreground);margin:0">Demo only — no data leaves this page. Connect Google Calendar + Sheets in Grow to make it live.</p>
+    </form>
+  </div>
+</section>
+
+<script>
+/* ===== Discovery-call form — guarded, client-side only ===== */
+try{
+(function(){
+  var f=document.getElementById("bookform"); if(!f || f.__wired) return; f.__wired=1;
+  var msg=document.getElementById("bookmsg");
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var n=(f.querySelector('[name=name]')||{}).value || "";
+    var i=(f.querySelector('[name=intent]')||{}).value || "";
+    msg.style.display="block";
+    msg.innerHTML = "Thanks"+(n?", "+n.split(" ")[0]:"")+" — noted: <b>"+i+"</b>. In the live build this writes to a Google Sheet and creates a Calendar invite.";
+    f.querySelector('button[type=submit]').textContent="Request sent ✦";
+  });
+})();
+}catch(e){ if(window.console) console.warn("Book form failed:", e); }
+</script>
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">Straight answers</div>
+      <h2>Frequently asked.</h2>
+    </div>
+    <div style="margin-top:26px">
+      <details class="faq" open><summary>Do I need a technical or legal background?</summary><p>No. The programme is written in plain language for professionals of every kind — business, admin, tech, data, audit, students and career-changers. If you can read a work email, you can do this.</p></details>
+      <details class="faq"><summary>Really only $29? What's the catch?</summary><p>No catch, no tiers, no upsell wall. $29 gives you the full programme, the games, the certificate and lifetime updates. We price it this way because we want governance literacy to spread widely, not stay elite.</p></details>
+      <details class="faq"><summary>How much time per day?</summary><p>Around 10–20 minutes. Ten short lessons designed around how memory actually works: a concept, a story, a game, a recall test. You can also sprint it in two days if you prefer.</p></details>
+      <details class="faq"><summary>Is the certificate recognised?</summary><p>You create and own the certificate through the programme. It is a verifiable record of completing a structured 10-day AI governance curriculum — useful for LinkedIn, internal promotion cases and client credibility.</p></details>
+      <details class="faq"><summary>Which standards and laws do you cover?</summary><p>EU AI Act, NIST AI RMF, ISO/IEC 42001, OECD AI Principles and the major national frameworks, translated into practical decisions rather than legal theory. We update them as rules change.</p></details>
+      <details class="faq"><summary>Is this about controlling AI, or banning it?</summary><p>Controlling it — with humans firmly in charge. You'll learn how to set boundaries, evidence decisions, catch bias and risk early, and keep AI serving people rather than the reverse.</p></details>
+      <details class="faq"><summary>Is the Learning Notebook (the robot dog) included?</summary><p>Yes — and it is free to share. It is the friendliest explanation of NIST's four functions and the EU AI Act's risk tiers you will find anywhere. Many people forward it to their team, their kids or their boss before they decide anything else.</p></details>
+      <details class="faq"><summary>Do you prepare me for an external certification like the IAPP AIGP?</summary><p>No — and we want to be clear about that. The AIGP is a certification run by IAPP; we are not a training partner and we do not sell, teach or prepare for their exam. What we do is teach the underlying frameworks in plain language and give you our own AI Governance Expert certificate for completing the 10-day programme. If you later choose to sit an external exam you will find the concepts familiar, but that is a separate path on their terms.</p></details>
+      <details class="faq"><summary>Who is this really for?</summary>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SIGNUP ================= -->
+<!-- Bolt: the $29 door -->
+<section id="boltGateSec" style="background:color-mix(in srgb,var(--foreground) 2.5%,transparent)">
+  <div class="wrap" style="text-align:center">
+    <div class="kick">The $29 door</div>
+    <h2 style="margin:12px 0 0">Everything is here to see. The path itself unlocks at checkout.</h2>
+    <p style="color:var(--muted-foreground);font-size:.92rem;line-height:1.8;margin:14px auto 0;max-width:44rem">Browse small bits of the syllabus, sample games and the certificate preview for free. After the one-time $29 payment, Bolt opens the full self-study documentation package: the complete 10-day education path, all materials I am preparing, the AI Governance Glossary, templates, policy packs, every game and quiz, and your personalised certificate. Before payment, the full learning library stays locked.</p>
+</section>
+
+<!-- Bolt: unlocked path + study materials -->
+<section id="boltUnlocked" style="display:none">
+  <div class="wrap">
+    <div class="kick">Yours — unlocked</div>
+    <h2 style="margin:12px 0 0">The 10-day path and the study library are open.</h2>
+    <div id="boltPath" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:22px"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+      <span class="bolt-tbtn">📘 Study library (10 days)</span>
+      <span class="bolt-tbtn">🗂 Templates &amp; policy packs</span>
+      <span class="bolt-tbtn">🎮 Games &amp; drills</span>
+      <span class="bolt-tbtn">🏅 Certificate desk</span>
+      <span class="bolt-tbtn">＋ All future additions, free</span>
+    </div>
+  </div>
+</section>
+<section id="signup" style="background:color-mix(in srgb,var(--foreground) 2.5%,transparent)">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="kick">Enrol or join the newsletter</div>
+      <h2>Reserve your seat on the next 10-day run.</h2>
+    </div>
+    <div class="signup">
+      <div>
+        <h3 style="margin:0 0 10px;font-size:1.15rem;letter-spacing:-.02em">What happens next</h3>
+        <p style="color:var(--muted-foreground);font-size:.89rem;line-height:1.7;margin:0">You'll get Day 1 immediately, a syllabus PDF, and a short weekly newsletter with one governance idea, one real-world case and one game. No spam, unsubscribe in one click.</p>
+        <div style="margin-top:20px;display:grid;gap:10px">
+          <div style="display:flex;gap:10px;font-size:.85rem"><span style="color:var(--gold)">✦</span><span>Day 1 unlocks the moment you join</span></div>
+          <div style="display:flex;gap:10px;font-size:.85rem"><span style="color:var(--gold)">✦</span><span>Certificate after all 10 days</span></div>
+          <div style="display:flex;gap:10px;font-size:.85rem"><span style="color:var(--gold)">✦</span><span>Global community of professionals</span></div>
+        </div>
+      </div>
+      <form onsubmit="return fake(event)">
+        <div class="grid g2" style="margin-top:0;gap:0 14px">
+          <div><label>Full name</label><input required placeholder="Your name"></div>
+          <div><label>Work email</label><input required type="email" placeholder="you@company.com"></div>
+        </div>
+        <div class="grid g2" style="margin-top:0;gap:0 14px">
+          <div><label>Country</label><input placeholder="Country"></div>
+          <div><label>Sector</label><select>
+            <option>Business / Management</option><option>Government / Public admin</option>
+            <option>Technology / Engineering</option><option>Legal / Compliance</option>
+            <option>Data / Audit</option><option>Healthcare</option><option>Education</option>
+            <option>Student / Career changer</option><option>Other</option>
+          </select></div>
+        </div>
+        <label>I want to</label>
+        <select><option>Enrol in the full 10-day programme — $29</option><option>Join the free newsletter first</option><option>Request a team / classroom licence</option></select>
+        <button class="btn btn-gold" style="width:100%;justify-content:center;margin-top:6px" type="submit">Claim my seat →</button>
+        <div class="okmsg" id="ok">✦ You're in. Day 1 is on its way to your inbox.</div>
+      </form>
+    </div>
+  </div>
+<!-- Bolt: certificate desk (appended into the signup column) -->
+<div id="boltCertWrap" class="bolt-card" style="margin-top:20px;flex-direction:column;align-items:stretch;gap:0">
+  <div id="boltCert" style="display:flex;flex-direction:column"></div>
+  <div id="boltGraduation" class="bolt-card" style="display:none;margin-top:12px">
+    <span class="bolt-mount" data-bolt-scale="0.95"></span>
+    <span><span class="bn">Bolt, at the finish line</span>
+    <span class="bh2" id="boltGradLine">"Now you are ready to go and conquer the AI world."</span></span>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="wrap fgrid">
+    <div>
+      <div class="brand" style="margin-bottom:12px"><div class="gem">✦</div><div>THE GOVERNANCE ACADEMY<small>AI Governance · Human Control</small></div></div>
+      <p style="margin:0;line-height:1.7;max-width:26rem">Making the world's professionals fluent in AI governance — because control over AI should belong to people, everywhere, at a price everyone can afford.</p>
+    </div>
+    <div><h4>Programme</h4><a href="#curriculum">The 10 days</a><a href="#game">Play a round</a><a href="#notebook">Learning Notebook</a><a href="#frameworks">Framework crosswalk</a><a href="#career">Certifications</a><a href="#offer">Pricing</a><a href="#book">For teams</a>
+      <a href="#faq">FAQ</a></div>
+    <div><h4>Frameworks</h4><a href="#">EU AI Act</a><a href="#">NIST AI RMF</a><a href="#">ISO/IEC 42001</a><a href="#">OECD Principles</a></div>
+    <div><h4>Connect</h4><a href="#signup">Newsletter</a><a href="#">LinkedIn</a><a href="#">Contact</a><a href="#">Team licences</a></div>
+  </div>
+  <div class="wrap" style="margin-top:26px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span>© 2026 The Governance Academy. Draft preview — placeholders in gold to replace.</span>
+    <span>Terms · Privacy · Accessibility</span>
+  </div>
+</footer>
+
+<script>
+/* ---------- 10 day list (hero) ---------- */
+var days=[
+ ["DAY 01","What AI governance really is"],
+ ["DAY 02","Who is accountable — and why it matters"],
+ ["DAY 03","Risk: spotting it before it ships"],
+ ["DAY 04","Bias, fairness & the human in the loop"],
+ ["DAY 05","Transparency & explainability in plain words"],
+ ["DAY 06","Privacy, data & the audit trail"],
+ ["DAY 07","The rulebooks: EU AI Act, NIST, ISO 42001"],
+ ["DAY 08","Policies, committees & real org design"],
+ ["DAY 09","Red-teaming: stress-test your own systems"],
+ ["DAY 10","Lead it: strategy, career & certificate"]
+];
+document.getElementById('daylist').innerHTML=days.map(function(d){
+  return '<div class="dayrow"><i>'+d[0]+'</i><span>'+d[1]+'</span></div>';
+}).join('');
+
+/* ---------- curriculum detail ---------- */
+var detail=[
+ ["DAY 01 — What AI governance really is","<b>You'll learn:</b> the difference between using AI and governing it; why 'the model did it' is never an answer; the four-part control loop (define, deploy, monitor, answer).<br><b>Story:</b> the bank that automated loan decisions and could not explain a single one.<br><b>Game:</b> “Who's responsible?” — 12 quick scenarios, pick the accountable role.<br><b>Exercise:</b> list every AI tool your team already uses. Most people are shocked.",
+  ["Foundations","Human-in-control"]],
+ ["DAY 02 — Who is accountable, and why it matters","<b>You'll learn:</b> the accountability map — owner, developer, deployer, affected party; how to write a RACI for an AI system in 20 minutes.<br><b>Story:</b> how one unclear owner turned a small model error into a public scandal.<br><b>Game:</b> Accountability Bingo — match the role to the duty under real frameworks.<br><b>Exercise:</b> draft the RACI for your highest-risk AI use case.",
+  ["Accountability","RACI"]],
+ ["DAY 03 — Risk: spotting it before it ships","<b>You'll learn:</b> a 5-level risk scoring model you can explain on a whiteboard; when a system is 'unacceptable', 'high', 'limited' or 'minimal'.<br><b>Story:</b> the hiring tool that learned to reject women — and the engineer who caught it.<br><b>Game:</b> Risk Triage speed-run — 90 seconds, 15 systems, sort them correctly.<br><b>Exercise:</b> score three AI tools you use today.",
+  ["Risk scoring","EU AI Act tiers"]],
+ ["DAY 04 — Bias, fairness & the human in the loop","<b>You'll learn:</b> where bias enters — data, labels, objectives, deployment; what 'fair' actually means across four definitions; how to design a meaningful human review point.<br><b>Story:</b> the medical algorithm that under-treated an entire population.<br><b>Game:</b> Bias Hunt — click the biased line in a real dataset sample.<br><b>Exercise:</b> define two fairness metrics for a system you own.",
+  ["Fairness","HITL design"]],
+ ["DAY 05 — Transparency & explainability in plain words","<b>You'll learn:</b> the difference between explainable, interpretable and merely documented; how to write a model card a non-technical executive will actually read.<br><b>Story:</b> explaining a refusal to a customer without leaking the model.<br><b>Game:</b> Explain It Simply — describe a system in max 25 words, machine-scored for jargon.<br><b>Exercise:</b> write a model card for one AI feature.",
+  ["Model cards","Explainability"]],
+ ["DAY 06 — Privacy, data & the audit trail","<b>You'll learn:</b> what an audit trail must contain to be defensible; data minimisation in practice; retention, consent and third-party model risk.<br><b>Story:</b> the training set nobody could prove the origin of.<br><b>Game:</b> Evidence or Excuse — is this a real audit artefact or a red flag?<br><b>Exercise:</b> checklist your current AI vendor contracts.",
+  ["Privacy","Auditability"]],
+ ["DAY 07 — The rulebooks: EU AI Act, NIST, ISO 42001","<b>You'll learn:</b> the rulemaps in plain language; what each expects, where they overlap, and how to build one control framework that satisfies all of them.<br><b>Story:</b> a startup that saved six months by mapping once, not four times.<br><b>Game:</b> Which Rulebook? — match obligations to the right framework, timed.<br><b>Exercise:</b> build your mapping table with our template.",
+  ["EU AI Act","NIST AI RMF","ISO/IEC 42001","OECD"]],
+ ["DAY 08 — Policies, committees & real org design","<b>You'll learn:</b> how to stand up an AI governance committee that actually meets; policy templates that survive legal review; the metrics you report upward.<br><b>Story:</b> the committee that met once and changed nothing — and the fix.<br><b>Game:</b> Policy Builder — assemble a valid AI policy from 20 card fragments.<br><b>Exercise:</b> draft your 90-day governance operating plan.",
+  ["Operating model","Policy"]],
+ ["DAY 09 — Red-teaming: stress-test your own systems","<b>You'll learn:</b> how to attack your own AI before regulators or adversaries do; prompt-injection, misuse and failure-mode hunting; documenting findings credibly.<br><b>Story:</b> the red-team finding that would have cost millions in fines.<br><b>Game:</b> Red Team Sprint — timed challenge against a simulated AI assistant.<br><b>Exercise:</b> run a 10-question red-team test on your own tool.",
+  ["Red-teaming","Resilience"]],
+ ["DAY 10 — Lead it: strategy, career & certificate","<b>You'll learn:</b> how to position yourself as the governance person in your organisation or market; how to write the CV lines, answer the interview questions and pitch a consulting offer.<br><b>Story:</b> three graduates — promoted, hired abroad, and consulting on the side.<br><b>Game:</b> Final Exam — 30 mixed rounds across all nine days.<br><b>Reward:</b> your personalised certificate unlocks. You are the expert.",
+  ["Career kit","Certificate"]]
+];
+document.getElementById('curriculum-list').innerHTML=detail.map(function(d,i){
+  return '<details class="day"'+(i===0?' open':'')+'><summary><span class="dnum">'+d[0].split(' — ')[0]+'</span><span>'+d[0].split(' — ')[1]+'</span></summary><div class="dbody">'+d[1]+'<div>'+d[2].map(function(t){return '<span class="tag">'+t+'</span>';}).join('')+'</div></div></details>';
+}).join('');
+
+/* ---------- GAME ---------- */
+var QS=[
+ {q:"Your company wants to auto-reject job applicants using an AI screener. Under the EU AI Act, what is this?",
+  a:["Minimal risk — no action needed","High risk — requires strict obligations and human oversight","Unacceptable — banned outright","Limited risk — just disclose it"],c:1,
+  f:"Employment decisions are explicitly <b>high risk</b>. That means risk management, documentation, logging and meaningful human oversight — not just a disclosure."},
+ {q:"An AI model gave a wrong loan refusal. A customer demands to know why. What is the governance priority?",
+  a:["Find which engineer is at fault","Confirm the decision is explainable and the account is correctable","Delete the model immediately","Blame the vendor in a public post"],c:1,
+  f:"Governance is about <b>system-level answerability</b>, not blame. Explainability plus a correctable outcome is the defensible response."},
+ {q:"Which best describes 'human in the loop'?",
+  a:["A human clicks approve without reading it","A human is legally named on a form","A human with real authority, information and time to override the AI","A human monitoring logs after a month"],c:2,
+  f:"<b>Rubber-stamping is not oversight.</b> Meaningful human control means authority, context and the ability to actually say no."},
+ {q:"Your team uses a third-party AI tool. Who is the 'deployer' under the AI Act?",
+  a:["The tool's creator","Your organisation, because you use it in your own processes","Nobody — it is the vendor's problem","The cloud provider"],c:1,
+  f:"Under the Act, the organisation using an AI system professionally is the <b>deployer</b> — with its own duties. Buying the tool does not buy out the responsibility."},
+ {q:"A vendor says 'our AI is fully compliant'. What should you do?",
+  a:["Accept it and move on","Ask for the evidence: model cards, evaluations, audit rights, incident process","Ask for a discount","Only worry if a regulator calls"],c:1,
+  f:"<b>Compliance is evidence, not a claim.</b> Ask for documentation, test results, contractual audit rights and a clear incident-response path."}
+];
+var idx=0,score=0,streak=0,xp=0,locked=false;
+var RANKS=[[0,"Observer"],[120,"Steward"],[260,"Guardian"],[400,"Architect"]];
+function rank(){var r="Observer";RANKS.forEach(function(p){if(xp>=p[0])r=p[1];});return r;}
+function paint(){
+  var q=QS[idx];
+  document.getElementById('roundlbl').textContent="Round "+(idx+1)+" of "+QS.length;
+  document.getElementById('lvl').textContent="Rank: "+rank();
+  document.getElementById('q').textContent=q.q;
+  var o=document.getElementById('opts');
+  o.innerHTML=q.a.map(function(t,i){return '<button class="opt" onclick="pick('+i+')">'+t+'</button>';}).join('');
+  document.getElementById('fb').innerHTML="Pick an answer — you'll get the reasoning either way.";
+  document.getElementById('next').disabled=true;
+  document.getElementById('next').textContent = idx===QS.length-1 ? "See result →" : "Next round →";
+  locked=false;
+}
+function pick(i){
+  if(locked)return;locked=true;
+  var q=QS[idx],btns=document.querySelectorAll('.opt');
+  btns.forEach(function(b,j){b.disabled=true;if(j===q.c)b.classList.add('good');});
+  if(i===q.c){score++;streak++;xp+=100+streak*20;document.getElementById('fb').innerHTML="✦ <b>Correct.</b> "+q.f;}
+  else{btns[i].classList.add('bad');streak=0;xp+=15;document.getElementById('fb').innerHTML="<b>Not quite.</b> "+q.f;}
+  document.getElementById('sc').textContent=score;
+  document.getElementById('streak').textContent=streak;
+  document.getElementById('xp').textContent=xp;
+  document.getElementById('bar').style.width=Math.min(100,(score/QS.length)*100)+"%";
+  document.getElementById('lvl').textContent="Rank: "+rank();
+  document.getElementById('next').disabled=false;
+}
+function nextQ(){
+  if(idx<QS.length-1){idx++;paint();}
+  else{
+    document.getElementById('q').innerHTML="Final score: <span style='color:var(--gold)'>"+score+" / "+QS.length+"</span> — Rank: "+rank();
+    document.getElementById('opts').innerHTML='<div style="font-size:.9rem;line-height:1.7;color:var(--muted-foreground)">That was 5 questions out of 30+ inside Day 9 alone. In the full programme you play this every day until the reasoning is automatic.<br><br>Ready for the certificate?</div>';
+    document.getElementById('fb').innerHTML="";
+    document.getElementById('next').textContent="Enrol — $29 →";
+    document.getElementById('next').disabled=false;
+    document.getElementById('next').onclick=function(){go('signup');};
+    document.getElementById('lvl').textContent="Rank: "+rank();
+  }
+}
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+function fake(e){e.preventDefault();document.getElementById('ok').style.display='block';e.target.querySelector('button[type=submit]').textContent="Seat claimed ✦";return false;}
+paint();
+/* ================= NOTEBOOK QUIZ ================= */
+var NK=[
+ {q:"🎮 A video game character controlled by AI. What colour light is that?",
+  a:["Green ✅ — no big deal","Red 🚫 — banned","Yellow ⚠️ — high risk","Blue 💬 — just be honest"],c:0,
+  f:"Green ✅. A video game character doesn't decide anything about your money, your job or your freedom. Same logic as a spam filter — totally fine."},
+ {q:"🏦 An AI that decides who gets a loan. What colour light?",
+  a:["Green ✅ — banks can do anything","Yellow ⚠️ — high risk, big rules to follow","Red 🚫 — banned","No colour, it's private business"],c:1,
+  f:"Yellow ⚠️ <b>high risk.</b> Money, jobs, housing and education decisions get the strictest treatment — testing, documentation and a human who can override."},
+ {q:"📢 A deepfake video of a celebrity saying something they never said. What's the rule?",
+  a:["Banned 🚫","No rules — it's just entertainment","💬 Just be honest — it must tell you it's AI","Only illegal on Tuesdays"],c:2,
+  f:"💬 <b>Just be honest.</b> Deepfakes and chatbots aren't banned — they simply have to tell you they're not human."},
+ {q:"🛠️ Your robot dog keeps knocking over the vase. Which of the 4 rules is that?",
+  a:["Govern — make the rules","Map — know what it's for","Measure — test it and write it down","Manage — fix it or turn it off"],c:3,
+  f:"🛠️ <b>Manage.</b> You found the problem, so now you respond: move the vase, retrain the dog — or switch it off. That's the fourth function."},
+ {q:"🔁 How many times do you loop through Govern, Map, Measure and Manage?",
+  a:["Once, at the start","Twice — start and finish","Forever, for as long as you use the AI","Only when something breaks"],c:2,
+  f:"🔁 <b>Forever.</b> Governance isn't a certificate on the wall — it's a wheel you keep turning. This one idea answers half of all interview questions."}
+];
+var nkI=0, nkS=0, nkLock=false;
+function nkPaint(){
+  var q=NK[nkI];
+  document.getElementById('nk-round').textContent="Notebook quiz · Question "+(nkI+1)+" of "+NK.length;
+  document.getElementById('nk-q').textContent=q.q;
+  document.getElementById('nk-opts').innerHTML=q.a.map(function(t,i){return '<button class="opt" onclick="nkPick('+i+')">'+t+'</button>';}).join('');
+  document.getElementById('nk-fb').innerHTML="Pick an answer — the explanation is the fun part.";
+  var b=document.getElementById('nk-next'); b.disabled=true;
+  b.textContent = nkI===NK.length-1 ? "See my stickers →" : "Next question →";
+  nkLock=false;
+}
+function nkPick(i){
+  if(nkLock)return; nkLock=true;
+  var q=NK[nkI], bts=document.querySelectorAll('#nk-opts .opt');
+  bts.forEach(function(b,j){b.disabled=true; if(j===q.c)b.classList.add('good');});
+  if(i===q.c){nkS++;document.getElementById('nk-fb').innerHTML="⭐ <b>Correct!</b> "+q.f;}
+  else{bts[i].classList.add('bad');document.getElementById('nk-fb').innerHTML="<b>Almost!</b> "+q.f;}
+  document.getElementById('nk-score').textContent=nkS+" ⭐";
+  document.getElementById('nk-bar').style.width=Math.min(100,(nkS/NK.length)*100)+"%";
+  document.getElementById('nk-next').disabled=false;
+}
+function nkNext(){
+  if(nkI<NK.length-1){nkI++;nkPaint();}
+  else{
+    document.getElementById('nk-q').innerHTML="You earned <span style='color:var(--gold)'>"+nkS+" / "+NK.length+"</span> stickers. 🐕";
+    document.getElementById('nk-opts').innerHTML='<div style="font-size:.9rem;line-height:1.7;color:var(--muted-foreground)">That is the whole idea. Govern, Map, Measure, Manage — the same four functions the professionals use, just with a robot dog. Day 1 of the programme starts exactly here.</div>';
+    document.getElementById('nk-fb').innerHTML="";
+    document.getElementById('nk-next').textContent="Start Day 1 — $29 →";
+    document.getElementById('nk-next').disabled=false;
+    document.getElementById('nk-next').onclick=function(){go('signup');};
+  }
+}
+nkPaint();
+</script>
+<script>
+/* ===== Bolt engine — idempotent, no globals leaked ===== */
+try{
+(function(){
+  if(window.__boltEngine) return; window.__boltEngine=1;
+  var W = window.Bolt = {voiceOn:true, muted:false, _rate:1.05, _pitch:1.18, _voice:"", unlocked:false};
+
+  W.svg = function(scale, animate){
+    var s = scale||1;
+    var eyes = (animate!==false)
+      ? '<circle class="be" cx="46" cy="44" r="3.2" fill="var(--bolt-key)"/><circle class="be" cx="58" cy="44" r="3.2" fill="var(--bolt-key)"/>'
+      : '<rect x="43.5" y="42.5" width="5" height="3" rx="1.5" fill="var(--bolt-key)"/><rect x="55.5" y="42.5" width="5" height="3" rx="1.5" fill="var(--bolt-key)"/>';
+    return '<svg width="'+(120*s)+'" height="'+(112*s)+'" viewBox="0 0 120 112" xmlns="http://www.w3.org/2000/svg">'
+      + '<ellipse cx="60" cy="106" rx="33" ry="3.5" fill="var(--bolt-fg)" opacity="0.10"/>'
+      + '<g class="btail" style="transform-origin:24px 62px">'
+      +   '<rect x="14" y="56" width="19" height="6" rx="3" fill="var(--bolt-body)"/>'
+      +   '<circle cx="15" cy="59" r="5" fill="var(--bolt-key)"/></g>'
+      + '<rect x="28" y="58" width="56" height="30" rx="12" fill="var(--bolt-body)" stroke="var(--bolt-fg)" stroke-width="2.4"/>'
+      + '<rect x="38" y="64" width="36" height="8" rx="4" fill="var(--bolt-key)" opacity="0.22"/>'
+      + '<g class="bleg" style="transform-origin:40px 88px"><rect x="38" y="84" width="8" height="19" rx="4" fill="var(--bolt-body)"/></g>'
+      + '<g class="bleg" style="transform-origin:72px 88px"><rect x="70" y="84" width="8" height="19" rx="4" fill="var(--bolt-body)"/></g>'
+      + '<g class="bback" style="transform-origin:48px 88px"><rect x="46" y="84" width="8" height="17" rx="4" fill="var(--bolt-body)" opacity=".7"/></g>'
+      + '<g class="bback" style="transform-origin:80px 88px"><rect x="78" y="84" width="8" height="17" rx="4" fill="var(--bolt-body)" opacity=".7"/></g>'
+      + '<g class="bhead" style="transform-origin:56px 64px">'
+      +   '<rect x="34" y="32" width="40" height="32" rx="11" fill="var(--bolt-body)" stroke="var(--bolt-fg)" stroke-width="2.4"/>'
+      +   '<path d="M36 34 L28 18 L44 26 Z" fill="var(--bolt-body)" stroke="var(--bolt-fg)" stroke-width="2.4" stroke-linejoin="round"/>'
+      +   '<path d="M72 34 L80 18 L64 26 Z" fill="var(--bolt-body)" stroke="var(--bolt-fg)" stroke-width="2.4" stroke-linejoin="round"/>'
+      +   '<rect x="66" y="48" width="16" height="12" rx="5" fill="var(--bolt-fg)" opacity="0.45"/>'
+      +   '<circle cx="74" cy="54" r="2.1" fill="var(--bolt-fg)"/>'
+      +   eyes
+      +   '<rect x="40" y="38" width="28" height="2.4" rx="1.2" fill="var(--bolt-fg)" opacity="0.22"/>'
+      + '</g>'
+      + '<circle class="bant" cx="54" cy="24" r="3" fill="var(--bolt-key)"/></svg>';
+  };
+
+  var ac=null;
+  function ctx(){
+    try{
+      if(!ac) ac = new (window.AudioContext||window.webkitAudioContext)();
+      if(ac.state==="suspended") ac.resume();
+      return ac;
+    }catch(e){ return null; }
+  }
+  function tone(f1,f2,dur,type,vol,delay){
+    var c=ctx(); if(!c||W.muted) return; var t=c.currentTime+(delay||0);
+    var o=c.createOscillator(), g=c.createGain();
+    o.type=type||"sine"; o.frequency.setValueAtTime(f1,t);
+    if(f2) o.frequency.exponentialRampToValueAtTime(Math.max(40,f2),t+dur);
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(vol||0.16,t+0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+    o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+dur+0.04);
+  }
+  function nz(dur,vol,delay,hp){
+    var c=ctx(); if(!c||W.muted) return; var t=c.currentTime+(delay||0);
+    var len=Math.floor(c.sampleRate*dur), b=c.createBuffer(1,len,c.sampleRate), d=b.getChannelData(0);
+    for(var i=0;i<len;i++) d[i]=(Math.random()*2-1)*(1-i/len);
+    var s=c.createBufferSource(); s.buffer=b;
+    var f=c.createBiquadFilter(); f.type="highpass"; f.highpass; f.frequency.value=hp||600;
+    var g=c.createGain(); g.gain.value=vol||0.1;
+    s.connect(f); f.connect(g); g.connect(c.destination); s.start(t);
+  }
+  W.sfx = {
+    woof: function(){ tone(520,180,.16,"sawtooth",.20,0); tone(430,150,.14,"sawtooth",.16,.05); },
+    happy:function(){ [660,880,1180].forEach(function(f,i){ tone(f,f*1.2,.12,"triangle",.14,i*.09); }); },
+    servo:function(){ tone(90,220,.4,"square",.05,0); nz(.32,.045,0,1200); },
+    error:function(){ tone(180,110,.3,"sawtooth",.16,0); tone(150,90,.3,"square",.1,.14); },
+    boot: function(){ [520,700,980,1320].forEach(function(f,i){ tone(f,f,.1,"sine",.12,i*.08); }); },
+    pant: function(){ for(var i=0;i<4;i++) nz(.09,.06,i*.13,1400); },
+    cheer:function(){ [523,659,784,1046,1318].forEach(function(f,i){ tone(f,f*1.01,.22,"triangle",.16,i*.12); }); }
+  };
+
+  W.setRate  = function(v){ W._rate  = parseFloat(v); };
+  W.setPitch = function(v){ W._pitch = parseFloat(v); };
+  W.pulse = function(on){
+    var d=document.querySelectorAll(".bolt-dot");
+    for(var i=0;i<d.length;i++){ d[i].style.transform = on? "scale(1.7)":"scale(1)"; }
+  };
+  W.bubble = function(txt){
+    var f=document.getElementById("boltFloat"); if(!f) return;
+    var b=f.querySelector(".fb"); if(!b) return;
+    b.textContent=txt; b.classList.add("show");
+    if(W._bt) clearTimeout(W._bt);
+    W._bt=setTimeout(function(){ b.classList.remove("show"); },5400);
+  };
+  /* ---- female voice selection ---- */
+  var FEMALE = ["samantha","victoria","karen","moira","tessa","fiona","serena","zira","aria","jenny",
+    "michelle","ava","emma","allison","susan","joanna","salli","kendra","kimberly","amy","nicole",
+    "google uk english female","google us english","female","woman","zira","hazel","catherine","libby","sonia","natasha","clara"];
+
+  function pickFemaleVoice(){
+    if(!("speechSynthesis" in window)) return null;
+    var vs = window.speechSynthesis.getVoices();
+    if(!vs || !vs.length) return null;
+    if(W._voice) { for(var j=0;j<vs.length;j++){ if(vs[j].name===W._voice) return vs[j]; } }
+    var i, n, best=null;
+    for(i=0;i<vs.length;i++){
+      n=(vs[i].name||"").toLowerCase();
+      if(/female|woman|girl/.test(n)){ best=vs[i]; break; }
+    }
+    if(!best){
+      for(i=0;i<FEMALE.length && !best;i++){
+        for(n=0;n<vs.length;n++){
+          if((vs[n].name||"").toLowerCase().indexOf(FEMALE[i])>-1){ best=vs[n]; break; }
+        }
+      }
+    }
+    if(!best){
+      for(i=0;i<vs.length;i++){
+        if(vs[i].lang && /^en/i.test(vs[i].lang) && vs[i].localService===false){ best=vs[i]; break; }
+      }
+    }
+    if(!best){
+      for(i=0;i<vs.length;i++){ if(vs[i].lang && /^en/i.test(vs[i].lang)){ best=vs[i]; break; } }
+    }
+    return best||null;
+  }
+  W.voiceObj = null;
+  W.voiceName = function(){
+    var v = W.voiceObj || pickFemaleVoice();
+    return v ? v.name : "";
+  };
+  W.listFemaleVoices = function(){
+    if(!("speechSynthesis" in window)) return [];
+    var vs = window.speechSynthesis.getVoices() || [], out=[];
+    for(var i=0;i<vs.length;i++){
+      if(!vs[i].lang || !/^en/i.test(vs[i].lang)) continue;
+      if(W.isFemaleName(vs[i].name)) out.push(vs[i]);
+    }
+    return out;
+  };
+  W.isFemaleName = function(name){
+    var n=(name||"").toLowerCase();
+    if(/female|woman|girl/.test(n)) return true;
+    for(var i=0;i<FEMALE.length;i++){ if(n.indexOf(FEMALE[i])>-1) return true; }
+    return false;
+  };
+  W.pickMaleVoice = function(){
+    if(!("speechSynthesis" in window)) return null;
+    var vs=window.speechSynthesis.getVoices()||[], i, n;
+    var M=["daniel","alex","fred","oliver","thomas","arthur","david","mark","george","rishi","male","ryan","eric","matthew","james","brian"];
+    if(W._voice){ for(i=0;i<vs.length;i++){ if(vs[i].name===W._voice) return vs[i]; } }
+    for(i=0;i<vs.length;i++){ n=(vs[i].name||"").toLowerCase(); if(/male|man|guy/.test(n) && !/female|woman/.test(n)) return vs[i]; }
+    for(i=0;i<M.length;i++){ for(n=0;n<vs.length;n++){ if((vs[n].name||"").toLowerCase().indexOf(M[i])>-1) return vs[n]; } }
+    for(i=0;i<vs.length;i++){ if(vs[i].lang && /^en/i.test(vs[i].lang)) return vs[i]; }
+    return null;
+  };
+  W.refreshVoices = function(){ W.voiceObj = pickFemaleVoice(); return W.voiceObj; };
+  W.setVoice = function(name){
+   if(name==="__female__"){ W._voice=""; W._gender="female"; W._pitch=1.18; W.voiceObj=null; W.refreshVoices(); return; }
+    if(name==="__male__"){ W._voice=""; W._gender="male"; W._pitch=1.0; W.voiceObj=W.pickMaleVoice(); return; }
+    W._voice = name || "";
+    W.voiceObj = null; W.refreshVoices();
+  };
+  if("speechSynthesis" in window && window.speechSynthesis.onvoiceschanged!==undefined){
+    try{ window.speechSynthesis.onvoiceschanged = function(){ W.voiceObj=null; W.refreshVoices(); }; }catch(e){}
+  }
+  W.speak = function(txt){
+    if(!W.voiceOn || !txt) return;
+    if(!("speechSynthesis" in window)){ W.sfx.happy(); return; }
+    try{
+      window.speechSynthesis.cancel();
+      var u=new SpeechSynthesisUtterance(txt);
+      u.pitch=W._pitch; u.rate=W._rate; u.volume=1;
+     var fv=W.voiceObj||(W.refreshVoices&&W.refreshVoices())||null; if(fv) u.voice=fv;
+      u.onstart=function(){ W.pulse(true); };
+      u.onend  =function(){ W.pulse(false); };
+      window.speechSynthesis.speak(u);
+    }catch(e){ W.sfx.happy(); }
+  };
+  W.say = function(txt, el, speakIt){
+    if(el) el.textContent=txt;
+    W.bubble(txt);
+    if(speakIt!==false) W.speak(txt);
+  };
+  W.lines = [
+    "Woof! Govern the culture, map the context, measure the risk, manage the response.",
+    "Good managers measure mistakes - that is my whole personality.",
+    "I do not drift after launch. I stay put and I stay tested.",
+    "I am the only one on this team who does not hallucinate.",
+    "Third-party blind spots? I sniff those out on walks.",
+    "Automation bias says trust me. I say: keep a human in the loop.",
+    "My kill switch is by the door, clearly labelled. Is yours?",
+    "I run on treats and independent evaluation.",
+    "Article 9 and my nose agree: assess the risk before you run.",
+    "High risk? I sit nicely. Unacceptable risk? I do not go near it.",
+    "Ten days, four functions, seven traits. Even a dog remembers that.",
+    "You are ready to go and conquer the AI world. I said it, so it is true."
+  ];
+  W.randomLine = function(){ return W.lines[Math.floor(Math.random()*W.lines.length)]; };
+
+  function each(sel, scope, fn){
+    var list=(scope||document).querySelectorAll(sel);
+    for(var i=0;i<list.length;i++) fn(list[i]);
+  }
+  W.bounce=function(sc){ each(".bhead",sc,function(h){ h.style.transition="transform .18s"; h.style.transform="translateY(-4px) rotate(-4deg)"; setTimeout(function(){ h.style.transform="translateY(0) rotate(0)"; },190); }); };
+  W.wag   =function(sc){ each(".btail",sc,function(t){ t.style.transition="transform .12s"; var n=0; var iv=setInterval(function(){ t.style.transform="rotate("+(n%2?18:-18)+"deg)"; if(++n>6){ clearInterval(iv); t.style.transform="rotate(0deg)"; } },120); }); };
+  W.trot  =function(sc){ each(".bleg", sc,function(l){ l.style.transition="transform .16s"; l.style.transform="rotate(12deg)"; setTimeout(function(){ l.style.transform="rotate(0deg)"; },180); }); };
+  W.blink =function(sc){
+    each(".be",sc,function(e){ e.setAttribute("r",0.5); });
+    setTimeout(function(){ each(".be",sc,function(e){ e.setAttribute("r",3.2); }); },130);
+  };
+  W.poke=function(el){ W.wag(el); W.bounce(el); W.blink(el); };
+  W.trotAll=function(){ W.trot(); W.bounce(); };
+
+  W.render = function(el, scale, animate){
+    if(!el) return;
+    if(el.getAttribute("data-bolt")==="1") return;
+    el.innerHTML = W.svg(scale, animate);
+    el.setAttribute("data-bolt","1");
+    if(!el.__boltBound){
+      el.__boltBound = 1;
+      el.addEventListener("click", function(){ W.sfx.woof(); W.poke(el); });
+    }
+  };
+  W.mountAll = function(){
+    each(".bolt-mount", null, function(m){
+      W.render(m, parseFloat(m.getAttribute("data-bolt-scale"))||0.6, m.getAttribute("data-bolt-anim")!=="0");
+    });
+  };
+  W.assign = function(id, scale, animate){
+    var m=document.getElementById(id); if(!m) return;
+    W.render(m, scale, animate);
+  };
+  W.watch = function(){
+    if(!window.MutationObserver) return;
+    var t=null;
+    new MutationObserver(function(){
+      if(t) return;
+      t=setTimeout(function(){ t=null; W.mountAll(); },60);
+    }).observe(document.documentElement,{childList:true,subtree:true});
+  };
+
+  function boot(){
+    W.mountAll(); W.watch();
+    window.addEventListener("pointerdown", function(){
+      W.sfx.boot(); W.wag(); W.bounce();
+      W.say("Bolt online - mascot, guard dog, occasional compliance officer.", null, true);
+    }, {once:true});
+    setInterval(function(){ if(Math.random()<0.45) W.blink(); }, 3400);
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+})();
+}catch(e){ if(window.console) console.warn("Bolt engine failed:", e); }
+</script>
+<script>
+/* ===== Bolt panel + ask bar ===== */
+try{
+(function(){
+  var W=window.Bolt; if(!W) return;
+  var panel=document.getElementById("boltPanel"), tab=document.getElementById("boltTab");
+  var sayEl=document.getElementById("boltSay") ? document.getElementById("boltSay").querySelector("span:last-child") : null;
+
+  function el(tag, css, html){ var e=document.createElement(tag); if(css) e.style.cssText=css; if(html!=null) e.innerHTML=html; return e; }
+
+  if(panel){
+    var hero=document.getElementById("boltHero");
+    if(hero){
+      hero.innerHTML=W.svg(1.35,true);
+      hero.style.cursor="pointer";
+      hero.addEventListener("click", function(){ W.sfx.woof(); W.poke(hero); W.say(W.randomLine(), sayEl, true); });
+    }
+    var ctl=document.getElementById("boltCtl");
+    if(ctl && !ctl.__built){
+      ctl.__built=1;
+      var bVoice=el("button","","🔊 Voice ON"); bVoice.className="on";
+      var bBark=el("button","","Woof");
+      var bTrick=el("button","","Trick");
+      var bLine=el("button","","Random line");
+      [bVoice,bBark,bTrick,bLine].forEach(function(x){ ctl.appendChild(x); });
+
+      bVoice.addEventListener("click", function(){
+        W.voiceOn=!W.voiceOn;
+        bVoice.className = W.voiceOn? "on":"";
+        bVoice.textContent = W.voiceOn? "🔊 Voice ON":"🔇 Voice OFF";
+        if(!W.voiceOn && window.speechSynthesis) window.speechSynthesis.cancel();
+        W.sfx.servo();
+      });
+      bBark.addEventListener("click", function(){ W.sfx.woof(); W.wag(panel); W.poke(hero); W.say("Woof woof! 🦴", sayEl, true); });
+      bTrick.addEventListener("click", function(){
+        W.sfx.servo(); W.wag(panel); W.trot(panel); W.bounce(hero);
+        W.say("Trick complete. Risk managed. ✔", sayEl, true);
+      });
+      bLine.addEventListener("click", function(){ W.sfx.boot(); W.wag(panel); W.say(W.randomLine(), sayEl, true); });
+    }
+    function openPanel(open){
+      var on = (open===undefined)? !panel.classList.contains("open") : !!open;
+      panel.classList.toggle("open", on);
+      if(on){ W.sfx.servo(); W.wag(panel); }
+    }
+    if(tab) tab.addEventListener("click", function(){ openPanel(); });
+    document.addEventListener("keydown", function(e){ if(e.key==="Escape") openPanel(false); });
+  }
+
+  var host=document.getElementById("boltHost");
+  if(!host || host.querySelector("#boltAsk")) return;
+
+  var box=el("div","","");
+  box.style.cssText="border:1px solid var(--bolt-line);border-radius:16px;padding:14px;background:var(--bolt-card);color:var(--bolt-fg)";
+  box.innerHTML=''
+   + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">'
+   +   '<span style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;opacity:.7">Bolt reads your question out loud</span>'
+   +   '<span style="flex:1 1 40px;height:1px;background:var(--bolt-line);min-width:20px"></span>'
+   +   '<span style="font-size:.66rem;opacity:.6">NIST AI RMF · ISO 42001 · EU AI Act</span>'
+   + '</div>'
+   + '<div id="boltAsk" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">'
+   +   '<input id="boltTxt" type="text" value="Woof! Ask me anything about governing AI." '
+   +     'style="flex:1 1 260px;min-width:0;padding:10px 12px;border-radius:10px;background:transparent;'
+   +     'border:1px solid var(--bolt-line);color:var(--bolt-fg);font:inherit;font-size:.84rem">'
+   +   '<button id="boltGo" style="font:inherit;font-size:.78rem;font-weight:800;padding:10px 14px;border-radius:10px;'
+   +     'cursor:pointer;border:1px solid var(--bolt-key);background:var(--bolt-key);color:var(--bolt-keyfg)">Speak it 🔊</button>'
+   + '</div>'
+   + '<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px">'
+   +   '<input id="boltRate" type="range" min="0.6" max="1.6" step="0.05" value="1.05" style="flex:1 1 120px;accent-color:var(--bolt-key)">'
+   +   '<span id="boltRateL" style="font-size:.7rem;opacity:.7;font-variant-numeric:tabular-nums">speed 1.05x</span>'
+   +   '<select id="boltVoice" style="font:inherit;font-size:.74rem;padding:7px 9px;border-radius:9px;'
+   +     'border:1px solid var(--bolt-line);background:transparent;color:var(--bolt-fg)">'
+   +     '<option value="__female__" selected>Bolt · female (auto) 🐾</option>'
+   +     '<option value="__male__">Bolt · male</option>'
+   +     '</select>'
+   + '</div>'
+   + '<div id="boltChips" style="display:flex;gap:7px;flex-wrap:wrap;margin-top:11px"></div>';
+
+  var chips=box.querySelector("#boltChips");
+  var CHIPS=[
+    ["What are the four NIST AI RMF functions?", "The 4 RMF functions"],
+    ["What makes an AI system trustworthy?", "7 traits of trustworthy AI"],
+    ["Is our hiring AI high-risk under the EU AI Act?", "Is our hiring AI high-risk?"],
+    ["How do I keep a human in the loop?", "Keep humans in control"]
+  ];
+  CHIPS.forEach(function(c){
+    var s=el("span","",""+c[1]+"");
+    s.style.cssText="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--bolt-line);cursor:pointer";
+    s.addEventListener("click", function(){
+      box.querySelector("#boltTxt").value=c[0];
+      W.sfx.happy(); W.wag(panel); W.say(c[0], sayEl, true);
+    });
+    chips.appendChild(s);
+  });
+  box.querySelector("#boltGo").addEventListener("click", function(){
+    W.sfx.happy(); W.trotAll();
+    var v=box.querySelector("#boltTxt").value.trim() || "Woof!";
+    W.say(v, sayEl, true);
+  });
+  box.querySelector("#boltRate").addEventListener("input", function(){
+    W.setRate(this.value);
+    box.querySelector("#boltRateL").textContent="speed "+parseFloat(this.value).toFixed(2)+"x";
+  });
+  var vsel=box.querySelector("#boltVoice");
+  if(vsel){
+    vsel.addEventListener("change", function(){
+      W.setVoice(this.value);
+      W.sfx.happy();
+      var vn = W.voiceName ? W.voiceName() : "";
+      W.say("Female voice selected. " + (vn? "Using " + vn + "." : "Using your browser's default.") + " Woof!", null, true);
+    });
+    setTimeout(function(){
+      var vn=W.voiceName? W.voiceName():"";
+      if(vn && vsel.options[0]) vsel.options[0].textContent="Bolt · female ("+vn+") 🐾";
+    },450);
+  }
+  host.appendChild(box);
+})();
+}catch(e){ if(window.console) console.warn("Bolt panel failed:", e); }
+</script>
+<script>
+/* ===== Bolt: the 10-day path (gated, playable) ===== */
+try{
+(function(){
+  var W=window.Bolt; if(!W) return;
+  var host=document.getElementById("boltPath"); if(!host) return;
+  if(host.__daysDone) return; host.__daysDone=1;
+
+  function all(scope,sel,fn){ var l=scope.querySelectorAll(sel); for(var i=0;i<l.length;i++) fn(l[i]); }
+  function mk(tag,cls,txt){ var e=document.createElement(tag); if(cls) e.className=cls; if(txt!=null) e.textContent=txt; return e; }
+
+  var DAYS=[
+    {n:1, ico:"\uD83C\uDFDB️", t:"Govern",  k:"Rules and culture first", line:"Day 1: we set the rules and the culture before anyone switches anything on. Govern comes first, always."},
+    {n:2, ico:"\uD83D\uDDFA️", t:"Map",     k:"What is it for?",         line:"Day 2: you write down what the system is for, who it touches and where it could go wrong. If it is not mapped, it is not managed."},
+    {n:3, ico:"\uD83D\uDCCF", t:"Measure",       k:"Test it, log it",         line:"Day 3: you measure mistakes instead of guessing. Evidence beats opinion, every single time."},
+    {n:4, ico:"\uD83D\uDEE0️", t:"Manage",  k:"Fix it or stop it",       line:"Day 4: you fix what the test found, or you stop shipping it. That is the whole loop, and it repeats forever."},
+    {n:5, ico:"⚖️", t:"Failure 1: Bias",                   k:"Textbook vs real world",  line:"Day 5: Bolt only knows slippers from the picture book. Real living rooms are messier. That gap is bias."},
+    {n:6, ico:"\uD83C\uDF0A", t:"Failure 2: Drift",                  k:"It changed on its own",   line:"Day 6: the world moves, the model does not. Drift is when yesterday's tested system quietly stops being the system you tested."},
+    {n:7, ico:"\uD83D\uDCE6", t:"Failure 3: Third-party blind spots", k:"You did not build it",    line:"Day 7: you do not own the model, so you cannot see inside it. Blind spots come with the vendor, so you contract for evidence."},
+    {n:8, ico:"\uD83D\uDD0D", t:"Failure 4: Opacity",                k:"Nobody can explain it",   line:"Day 8: a system no human can explain cannot be defended in front of a regulator, a board, or a customer."},
+    {n:9, ico:"\uD83E\uDDD1‍⚖️", t:"Failure 5: Automation bias", k:"We stop checking",  line:"Day 9: a confident system makes people lazy. Automation bias is when trust becomes an unexamined default."},
+    {n:10, ico:"\uD83C\uDF93", t:"Prove it, then graduate",           k:"Red-team, policy, certificate", line:"Day 10: you red-team your own system, write the one-page policy, and walk out with the certificate. You are ready to go and conquer the AI world."}
+  ];
+  var CHANT=["Good","Managers","Measure","Mistakes"];
+  var GAMES=[
+    {ico:"\uD83C\uDFAF", t:"Spot the bias",          d:"Two hiring models, same accuracy, wildly different outcomes. Pick the one you can defend."},
+    {ico:"\uD83C\uDF0A", t:"Drift alarm",            d:"A dashboard has quietly slipped. Find the day it started before the client does."},
+    {ico:"❓", t:"Does this break the Act?", d:"Twelve systems, four risk tiers, ninety seconds on the clock."},
+    {ico:"\uD83E\uDD77", t:"Red-team sprint",        d:"Bolt plays the adversary. Ten minutes to break your own system first."}
+  ];
+  var ROAD=[
+    {d:"Days 1-2", t:"The chant",         s:"Govern, Map, Measure, Manage. Four functions, one loop, learned for good."},
+    {d:"Days 3-4", t:"The build",         s:"Measure and manage a real system you already work with. Not a case study."},
+    {d:"Days 5-9", t:"The five failures", s:"Bias, drift, third-party blind spots, opacity, automation bias. One a day, each taught as a game."},
+    {d:"Day 10",   t:"Prove it",          s:"Red-team your own system, write the one-page policy, collect the certificate."}
+  ];
+
+  var css=document.createElement("style");
+  css.textContent=''
+   + '.bd{border:1px solid var(--bolt-line);border-radius:14px;padding:13px;background:var(--bolt-card);color:var(--bolt-fg);}'
+   + '#boltPath .bd.day,#boltPath .bd.game{cursor:pointer;transition:transform .16s,border-color .16s;}'
+   + '#boltPath .bd.day:hover,#boltPath .bd.game:hover{transform:translateY(-2px);border-color:var(--bolt-key);}'
+   + '#boltPath .bd.on{border-color:var(--bolt-key);box-shadow:inset 0 0 0 1px var(--bolt-key);}'
+   + '.bd .dn{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;opacity:.55;font-weight:800;}'
+   + '.bd .di{font-size:1.1rem;margin:6px 0 4px;}'
+   + '.bd .dt{font-size:.82rem;font-weight:800;line-height:1.35;}'
+   + '.bd .dk{font-size:.71rem;opacity:.65;margin-top:3px;line-height:1.5;}'
+   + '.bd .bar{height:4px;border-radius:999px;background:var(--bolt-line);margin-top:10px;overflow:hidden;}'
+   + '.bd .bar i{display:block;height:100%;width:0;background:var(--bolt-key);transition:width .3s;}';
+  document.head.appendChild(css);
+
+  var head=mk("div");
+  head.style.cssText="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:15px;border:1px solid var(--bolt-line);border-radius:16px;background:var(--bolt-card);color:var(--bolt-fg)";
+  var hd=mk("span"); hd.className="bolt-mount"; hd.setAttribute("data-bolt-scale","0.62"); head.appendChild(hd);
+  var ht=mk("span"); ht.style.cssText="min-width:200px;flex:1";
+  ht.innerHTML='<span style="display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6;font-weight:800">Bolt walks you through it</span>'
+   + '<span id="bChant" style="display:block;font-size:.94rem;font-weight:800;margin-top:4px">Good Managers Measure Mistakes</span>'
+   + '<span style="display:block;font-size:.72rem;opacity:.65;margin-top:4px">Govern &rarr; Map &rarr; Measure &rarr; Manage &rarr; repeat. Ten days, about twelve minutes each.</span>';
+  head.appendChild(ht);
+  var hb=mk("span"); hb.style.cssText="display:flex;gap:8px;flex-wrap:wrap";
+  var chantBtn=mk("span","bolt-tbtn","Say the chant \uD83D\uDDE3️"); hb.appendChild(chantBtn);
+  var hearBtn=mk("span","bolt-tbtn","Read day 1 aloud \uD83D\uDD0A"); hb.appendChild(hearBtn);
+  head.appendChild(hb);
+
+  var grid=mk("div");
+  grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px";
+  DAYS.forEach(function(d){
+    var c=mk("div","bd day"); c.setAttribute("data-day",d.n);
+    c.innerHTML='<div class="dn">Day '+(d.n<10?"0"+d.n:d.n)+'</div><div class="di">'+d.ico+'</div>'
+      + '<div class="dt">'+d.t+'</div><div class="dk">'+d.k+'</div><div class="bar"><i></i></div>';
+    grid.appendChild(c);
+  });
+
+  var foot=mk("div");
+  foot.style.cssText="margin-top:14px;border:1px solid var(--bolt-line);border-radius:16px;padding:16px;background:var(--bolt-card);color:var(--bolt-fg)";
+  var fh='<div style="font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6;font-weight:800">The shape of the ten days</div>'
+   + '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:12px">';
+  ROAD.forEach(function(r){
+    fh+='<div style="border:1px solid var(--bolt-line);border-radius:12px;padding:12px">'
+      + '<div style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;opacity:.55;font-weight:800">'+r.d+'</div>'
+      + '<div style="font-size:.84rem;font-weight:800;margin:5px 0 3px">'+r.t+'</div>'
+      + '<div style="font-size:.72rem;opacity:.68;line-height:1.55">'+r.s+'</div></div>';
+  });
+  fh+='</div><div style="font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6;font-weight:800;margin-top:18px">Games you play, not lectures you watch</div>'
+   + '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px;margin-top:12px">';
+  GAMES.forEach(function(g){
+    fh+='<div class="bd game" data-game="'+g.t+'"><div class="di">'+g.ico+'</div><div class="dt">'+g.t+'</div><div class="dk">'+g.d+'</div></div>';
+  });
+  fh+='</div><div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:16px">'
+   + '<span class="bolt-tbtn" id="bPlay">\uD83C\uDFAE Play a round with Bolt</span>'
+   + '<span class="bolt-tbtn" id="bRed">\uD83E\uDD77 Red-team my own system</span>'
+   + '<span class="bolt-tbtn" id="bPolicy">\uD83D\uDCC4 Write the one-page policy</span>'
+   + '</div>';
+  foot.innerHTML=fh;
+
+  host.innerHTML="";
+  host.appendChild(head); host.appendChild(grid); host.appendChild(foot);
+
+  var chantEl=head.querySelector("#bChant");
+  var done={}, tick=null;
+  function repaint(){
+    all(grid,".bd.day",function(c){
+      var n=c.getAttribute("data-day"), on=!!done[n];
+      if(on) c.classList.add("on"); else c.classList.remove("on");
+      c.querySelector(".bar i").style.width = on? "100%":"0";
+    });
+  }
+
+  grid.addEventListener("click", function(e){
+    var c=e.target;
+    while(c && c!==grid && !(c.className && String(c.className).indexOf("day")>-1)) c=c.parentNode;
+    if(!c || c===grid) return;
+    var n=c.getAttribute("data-day"); if(!n) return;
+    done[n]=!done[n];
+    repaint(); W.sfx.servo(); W.poke(c);
+    W.say(DAYS[parseInt(n,10)-1].line, null, true);
+  });
+
+  chantBtn.addEventListener("click", function(){
+    W.sfx.happy(); chantEl.textContent="";
+    var i=0;
+    if(tick) clearInterval(tick);
+    tick=setInterval(function(){
+      chantEl.textContent = CHANT.slice(0,i+1).join(" ");
+      W.speak(CHANT[i]);
+      if(++i>=CHANT.length){ clearInterval(tick); tick=null; }
+    },520);
+    W.poke(hd);
+  });
+  hearBtn.addEventListener("click", function(){ W.sfx.woof(); W.say(DAYS[0].line, null, true); });
+
+  foot.querySelector("#bPlay").addEventListener("click", function(){
+    var g=GAMES[Math.floor(Math.random()*GAMES.length)];
+    all(foot,".bd.game",function(x){
+      x.classList.toggle("on", x.getAttribute("data-game")===g.t);
+    });
+    W.sfx.happy(); W.say("Game on: "+g.t+". "+g.d+" Bark when you have got it.", null, true);
+  });
+  foot.querySelector("#bRed").addEventListener("click", function(){
+    W.sfx.error();
+    W.say("I will play the adversary. You defend the system: what breaks it, who gets hurt, and who is accountable when it does. Answer out loud.", null, true);
+  });
+  foot.querySelector("#bPolicy").addEventListener("click", function(){
+    W.sfx.servo();
+    W.say("One page. Purpose, owner, data, limits, tests, kill switch. If it does not fit on one page, it will not be read.", null, true);
+  });
+  all(foot,".bd.game",function(x){
+    x.addEventListener("click", function(){
+      W.sfx.happy(); W.poke(x);
+      W.say(x.getAttribute("data-game")+" - "+x.querySelector(".dk").textContent, null, true);
+    });
+  });
+
+  W.mountAll(); repaint();
+})();
+}catch(e){ if(window.console) console.warn("Bolt 10-day path failed:", e); }
+</script>
+<script>
+/* ===== Bolt on the light pages: buddy, gate, path, certificate ===== */
+try{
+(function(){
+  var W=window.Bolt; if(!W) return;
+  W.assign("boltHeroDog", 1.1, true);
+  W.assign("boltGateDog", 0.72, true);
+
+  var bark=document.getElementById("boltBuddyBark");
+  if(bark) bark.addEventListener("click", function(){
+    W.sfx.woof(); W.poke(document.getElementById("boltBuddy"));
+    W.say("Woof! I keep your AI from going off-leash. Ask me anything in the 📚 Notebook section.", null, true);
+  });
+
+  var a=document.querySelector('.navlinks a[href="#faq"]');
+  if(a && !document.getElementById("boltNavDot")){
+    var d=document.createElement("a"); d.id="boltNavDot"; d.href="#signup";
+    d.style.cssText="display:inline-flex;align-items:center;gap:5px;cursor:pointer";
+    d.textContent="🦿 Bolt";
+    a.parentNode.appendChild(d);
+    d.addEventListener("click", function(){ W.sfx.woof(); W.bubble("Woof! Enrol first, play with me second."); });
+  }
+
+  /* ---- the 10-day path tiles ---- */
+  var p=document.getElementById("boltPath");
+  if(p && !p.__built){
+    p.__built=1;
+    var days=["Day 01 What governance really is","Day 02 Accountability","Day 03 Risk & the AI Act tiers","Day 04 Bias & human-in-the-loop","Day 05 Transparency","Day 06 Privacy & audit trails","Day 07 The rulebooks","Day 08 Policy & committees","Day 09 Red-teaming","Day 10 Lead it & certify"];
+    days.forEach(function(t){
+      var c=document.createElement("div");
+      c.style.cssText="border:1px solid var(--bolt-line);border-radius:12px;padding:13px;background:var(--bolt-card);color:var(--bolt-fg);font-size:.83rem;font-weight:700;cursor:pointer";
+      c.textContent=t;
+      c.addEventListener("click", function(){ W.sfx.servo(); W.poke(c); W.say("Opening "+t+".", null, true); });
+      p.appendChild(c);
+    });
+  }
+
+  /* ---- certificate desk ---- */
+  var cert=document.getElementById("boltCert");
+  if(cert && !cert.__built){
+    cert.__built=1;
+    cert.innerHTML=''
+     + '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap">'
+     +   '<span class="bolt-mount" data-bolt-scale="0.5"></span>'
+     +   '<span><span style="display:block;font-size:.72rem;font-weight:800">Bolt, your graduation dog</span>'
+     +   '<span style="display:block;font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;opacity:.62">On duty at the certificate desk</span></span>'
+     + '</div>'
+     + '<div id="boltCertSay" style="font-size:.86rem;line-height:1.6;display:flex;gap:9px;align-items:flex-start;margin-bottom:14px">'
+     +   '<span class="bolt-dot"></span>'
+     +   '<span>Type your name, pass the 10 short days, and I will hand over your paperwork.</span></div>'
+     + '<div style="display:flex;gap:9px;flex-wrap:wrap;align-items:center">'
+     +   '<input id="boltWho" type="text" placeholder="Your name for the certificate" '
+     +     'style="flex:1 1 200px;min-width:0;padding:11px 13px;border-radius:11px;background:transparent;'
+     +     'border:1px solid var(--bolt-line);color:var(--bolt-fg);font:inherit;font-size:.86rem">'
+     +   '<button id="boltFinish" style="font:inherit;font-size:.8rem;font-weight:800;padding:11px 16px;border-radius:11px;'
+     +     'cursor:pointer;border:1px solid var(--bolt-key);background:var(--bolt-key);color:var(--bolt-keyfg)">'
+     +     'Finish the 10 days 🎓</button>'
+     + '</div>'
+     + '<div id="boltTicket" style="margin-top:14px;border:1px solid var(--bolt-line);border-radius:14px;padding:14px;display:none">'
+     +   '<div style="font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6">Certificate of completion</div>'
+     +   '<div style="font-size:1.02rem;font-weight:800;margin:6px 0 4px">AI Governance Expert</div>'
+     +   '<div style="font-size:.8rem;opacity:.85">Awarded to <b id="boltWhoOut">[ Your Name ]</b> for completing the 10-day programme across NIST AI RMF and the EU AI Act.</div>'
+     +   '<div style="margin-top:10px;font-size:.68rem;opacity:.6;display:flex;justify-content:space-between">'
+     +     '<span>CERT-2026-0001</span><span>10 / 10 DAYS</span></div>'
+     + '</div>';
+    W.mountAll();
+
+    var sayEl=cert.querySelector("#boltCertSay span:last-child");
+    var days=0;
+    cert.querySelector("#boltFinish").addEventListener("click", function(){
+      var who=cert.querySelector("#boltWho").value.trim() || "your good self";
+      days+=4;
+      W.sfx.cheer(); W.trotAll();
+      cert.querySelector("#boltWhoOut").textContent=who;
+      cert.querySelector("#boltTicket").style.display="block";
+      if(days<10){
+        W.say("Day " + days + " banked. " + (10-days) + " to go - keep going, " + who + "!", sayEl, true);
+      } else {
+        W.sfx.cheer();
+        if(W.celebrateWhenReady) W.celebrateWhenReady();
+        W.say("Certificate ready, " + who + ". You are now ready to go and conquer the AI world. Woof!", sayEl, true);
+        var big=document.getElementById("boltGraduation");
+        if(big){
+          big.style.display="flex";
+          var gs=big.querySelector(".bolt-mount");
+          W.render(gs, 0.95, true);
+          W.poke(gs);
+        }
+      }
+    });
+  }
+  W.mountAll();
+})();
+}catch(e){ if(window.console) console.warn("Bolt light controller failed:", e); }
+</script>
+<script>
+/* ===== Bolt guards the paid door (light pages) ===== */
+try{
+(function(){
+  var W=window.Bolt; if(!W) return;
+
+  function unlock(paid){
+    W.unlocked=!!paid;
+    var items=document.querySelectorAll("[data-unlock]");
+    for(var i=0;i<items.length;i++){ items[i].style.display = paid? "":"none"; }
+  }
+  W.unlock=unlock;
+  unlock(false);
+
+  var orig = window.fake;
+  window.fake = function(e){
+    e.preventDefault();
+    var form=e.target;
+    var sel=form.querySelectorAll("select");
+    var intent = sel.length? sel[sel.length-1].value : "";
+    var paid = intent.indexOf("$29")>-1 || intent.indexOf("Enrol")>-1 || intent.indexOf("full")>-1;
+    var ok=document.getElementById("ok");
+    if(ok) ok.style.display="block";
+
+    if(paid){
+      unlock(true);
+      W.sfx.cheer(); W.trotAll();
+      if(W.celebrateWhenReady) W.celebrateWhenReady();
+      if(ok) ok.textContent="✦ Seat claimed. The full path and the study materials are unlocked — scroll on. Bolt has opened the gate.";
+      var gate=document.getElementById("boltGate");
+      if(gate){ gate.style.display="flex"; var m=gate.querySelector(".bolt-mount"); W.render(m,0.9,true); W.poke(m); }
+      var lock=document.getElementById("boltLockNote");
+      if(lock) lock.style.display="none";
+      W.say("Paid - gate open! Every day, every template and the certificate are yours now.", null, true);
+      var after=document.getElementById("boltUnlocked");
+      if(after){ after.style.display="block"; after.scrollIntoView({behavior:"smooth", block:"start"}); }
+    } else {
+      if(ok) ok.textContent="✦ You are on the list. Day 1 teaser is on its way - the full 10-day path and the study materials unlock with the $29 all-access enrolment.";
+      W.sfx.woof(); W.trotAll();
+      W.say("Newsletter noted. The full path stays behind the $29 door - I am a good guard dog.", null, true);
+    }
+    return false;
+  };
+})();
+}catch(e){ if(window.console) console.warn("Bolt gate failed:", e); }
+</script>
+
+<script>
+/* ===== Practitioner waitlist — placeholder state, Bolt speaks ===== */
+try{
+(function(){
+  var card=document.getElementById("practCard"); if(!card || card.__wired) return; card.__wired=1;
+  var btn=document.getElementById("practWait");
+  var note=document.getElementById("practNote");
+  var msg="The Practitioner cohort is full for now - I am holding your place on the waitlist. You will hear from me the moment the next one opens.";
+
+  function boltSay(text){
+    try{
+      var W=window.Bolt; if(!W) return;
+      if(W.sfx && W.sfx.woof) W.sfx.woof();
+      if(W.bubble) W.bubble(text);
+      if(W.speak) W.speak(text);
+      var mount=card.querySelector(".bolt-mount");
+      if(mount && W.render){ W.render(mount, 0.8, true); }
+      if(W.poke) W.poke(card);
+    }catch(err){ if(window.console) console.warn("Bolt waitlist voice failed:", err); }
+  }
+
+  if(!btn) return;
+  btn.addEventListener("click", function(){
+    if(note){ note.style.display="block"; note.textContent = msg; }
+    btn.textContent = "You are on the waitlist ✓";
+    btn.disabled = true;
+    btn.style.opacity = ".65";
+    boltSay(msg);
+  });
+})();
+}catch(e){ if(window.console) console.warn("Practitioner waitlist failed:", e); }
+</script>
+
+<script>
+/* ===== Gmail enrolment handoff — static-site safe ===== */
+try{
+(function(){
+  var GMAIL="aigovernancepath@gmail.com";
+  function enc(v){ return encodeURIComponent(v||""); }
+  function vals(form){
+    var fields=[];
+    var els=form.querySelectorAll("input,select,textarea");
+    for(var i=0;i<els.length;i++){
+      var el=els[i];
+      var label="Field "+(i+1);
+      var wrap=el.parentNode;
+      if(wrap){ var l=wrap.querySelector("label"); if(l) label=l.textContent.replace(/\s+/g," ").trim(); }
+      if(!label || /^Field/.test(label)){
+        var prev=el.previousElementSibling;
+        if(prev && prev.tagName && prev.tagName.toLowerCase()==="label") label=prev.textContent.replace(/\s+/g," ").trim();
+      }
+      fields.push(label+": "+(el.value||""));
+    }
+    return fields.join("\n");
+  }
+  function openMail(form, kind){
+    var body="New AI Governance Academy enrolment request\n\n"+
+      "Package: $29 self-study documentation package\n"+
+      "Includes: full 10-day path, prepared study materials, AI Governance Glossary, all games, quizzes, templates, policy packs and certificate\n\n"+
+      vals(form)+"\n\nSent from the landing page. Payment unlock should be completed before releasing the full materials.";
+    window.location.href="mailto:"+GMAIL+"?subject="+enc("AI Governance Academy enrolment — $29 package")+"&body="+enc(body);
+  }
+
+  var forms=[];
+  var sf=document.getElementById("signupform"); if(sf) forms.push(sf);
+  var light=document.querySelector("#signup form"); if(light && forms.indexOf(light)<0) forms.push(light);
+  for(var i=0;i<forms.length;i++){
+    (function(form){
+      if(form.__gmailWired) return; form.__gmailWired=1;
+      form.addEventListener("submit", function(){ setTimeout(function(){ openMail(form,"enrol"); },60); }, true);
+      var btn=form.querySelector('button[type="submit"],button:not([type])');
+      if(btn && btn.textContent.indexOf("Gmail")<0){ btn.setAttribute("title","Also opens a pre-filled email to "+GMAIL); }
+    })(forms[i]);
+  }
+
+  var targets=document.querySelectorAll('a[href="#enrol"],a[href="#enrolform"],a[href="#signup"]');
+  for(var j=0;j<targets.length;j++){
+    targets[j].setAttribute("title","Enrolment request goes to "+GMAIL);
+  }
+
+  var note=document.createElement("p");
+  note.setAttribute("data-gmail-note","1");
+  note.style.cssText="font-size:.78rem;line-height:1.55;margin:12px 0 0;color:inherit;opacity:.72";
+  note.innerHTML="Enrolment requests are sent to <b>"+GMAIL+"</b>. The full package unlocks after the $29 payment is confirmed.";
+  var host=(document.getElementById("signupform")||document.querySelector("#signup form"));
+  if(host && !document.querySelector('[data-gmail-note="1"]')) host.appendChild(note);
+})();
+}catch(e){ if(window.console) console.warn("Gmail enrolment handoff failed:", e); }
+</script>
+
+<script>
+/* ===== $29 payment placeholder — replace PAYMENT_LINK with Stripe/PayPal/Gumroad URL ===== */
+try{
+(function(){
+  var PAYMENT_LINK="https://YOUR-PAYMENT-LINK-HERE";
+  var GMAIL="aigovernancepath@gmail.com";
+  window.AIGA_PAYMENT_LINK=PAYMENT_LINK;
+
+  function markPay(el){
+    if(!el) return;
+    el.setAttribute("href", PAYMENT_LINK);
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener");
+    el.setAttribute("data-payment-placeholder", "replace-with-live-checkout-link");
+    el.setAttribute("title", "Replace this placeholder with your live $29 Stripe, PayPal, Gumroad or Lemon Squeezy checkout link.");
+    el.textContent = "Pay $29 and unlock the full package →";
+  }
+
+  var anchors=document.querySelectorAll('a[href="#enrol"],a[href="#enrolform"],a[href="#signup"]');
+  for(var i=0;i<anchors.length;i++){
+    var txt=(anchors[i].textContent||"").toLowerCase();
+    if(txt.indexOf("enrol")>-1 || txt.indexOf("unlock")>-1 || txt.indexOf("seat")>-1) markPay(anchors[i]);
+  }
+
+  var forms=[];
+  var sf=document.getElementById("signupform"); if(sf) forms.push(sf);
+  var lf=document.querySelector("#signup form"); if(lf && forms.indexOf(lf)<0) forms.push(lf);
+  for(var j=0;j<forms.length;j++){
+    var f=forms[j];
+    f.setAttribute("data-payment-required","true");
+    var b=f.querySelector('button[type="submit"],button:not([type])');
+    if(b) b.textContent="Pay $29 and unlock the full package →";
+    var note=f.querySelector('[data-payment-note]');
+    if(!note){
+      note=document.createElement("p");
+      note.setAttribute("data-payment-note","1");
+      note.style.cssText="font-size:.78rem;line-height:1.55;margin:10px 0 0;color:inherit;opacity:.72";
+      note.innerHTML="Secure checkout placeholder is ready. Add your live $29 payment link when ready. Questions go to <b>"+GMAIL+"</b>.";
+      f.appendChild(note);
+    }
+  }
+
+  var next=document.getElementById("next");
+  if(next && /Enrol|Finish|Next/i.test(next.textContent||"")){
+    next.textContent="Pay $29 and unlock the full package →";
+    next.setAttribute("data-payment-placeholder","replace-with-live-checkout-link");
+  }
+})();
+}catch(e){ if(window.console) console.warn("Payment placeholder failed:", e); }
+</script>
+
+<script>
+/* ===== Grow live integration settings =====
+   Replace WEBHOOK_URL with your Grow/Pipedream webhook endpoint.
+   The webhook should:
+   1) verify payment status,
+   2) append the enrolment to Google Sheets,
+   3) optionally create a Google Calendar onboarding/check-in event,
+   4) send the unlocked package email from Gmail with the private access link.
+   Recommended delivery: Google Drive private package folder; glossary and starter materials first, then add the remaining materials as completed.
+*/
+try{
+(function(){
+  window.AIGA_GROW_LIVE = {
+    status: "live-webhook",
+    webhookUrl: "https://eop27z25ctn2skd.m.pipedream.net",
+    gmailAccount: "aigovernancepath@gmail.com",
+    googleSheet: {
+      spreadsheetId: "1cpsVNE2gI-sbOot_vwWZIJ_sAszFZ0Huh-qFS70R3GA",
+      spreadsheetUrl: "https://docs.google.com/spreadsheets/d/1cpsVNE2gI-sbOot_vwWZIJ_sAszFZ0Huh-qFS70R3GA/edit",
+      worksheetName: "Enrolments",
+      headers: ["Timestamp","Full Name","Email","Country","Sector","Intent","Package","Payment Status","Payment Link","Calendar Status","Calendar Event ID","Notes"]
+    },
+    googleCalendar: {
+      calendarId: "aigovernancepath@gmail.com",
+      timezone: "UTC",
+      defaultEventTitle: "AI Governance Academy — New enrolment follow-up",
+      defaultDurationMinutes: 30,
+      googleMeetAvailable: true
+    },
+    package: {
+      name: "AI Governance Academy — Self-Study Documentation Package",
+      priceUsd: 29,
+      unlocks: [
+        "Full 10-day AI Governance path",
+        "Prepared study materials",
+        "AI Governance Glossary",
+        "All games and quizzes",
+        "Templates and policy packs",
+        "Certificate access",
+        "Lifetime updates",
+        "Delivery by private access email after payment confirmation"
+      ]
+    }
+  };
+
+  function collect(form){
+    var data={};
+    var els=form.querySelectorAll("input,select,textarea");
+    for(var i=0;i<els.length;i++){
+      var el=els[i];
+      var key=el.name || el.getAttribute("aria-label") || el.placeholder || ("field_"+(i+1));
+      key=key.toLowerCase().replace(/[^a-z0-9]+/g,"_").replace(/^_|_$/g,"");
+      data[key]=el.value||"";
+    }
+    data.package=window.AIGA_GROW_LIVE.package.name;
+    data.priceUsd=window.AIGA_GROW_LIVE.package.priceUsd;
+    data.paymentLink=window.AIGA_PAYMENT_LINK || "https://YOUR-PAYMENT-LINK-HERE";
+    data.source="landing-page";
+    data.timestamp=new Date().toISOString();
+    return data;
+  }
+
+  function postToGrow(form){
+    var cfg=window.AIGA_GROW_LIVE;
+    if(!cfg || !cfg.webhookUrl) return false;
+    try{
+      var payload=collect(form);
+      if(window.fetch){
+        fetch(cfg.webhookUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}).catch(function(err){ if(window.console) console.warn("Grow webhook failed:", err); });
+        return true;
+      }
+    }catch(e){ if(window.console) console.warn("Grow webhook submit failed:", e); }
+    return false;
+  }
+
+  var forms=[];
+  var sf=document.getElementById("signupform"); if(sf) forms.push(sf);
+  var lf=document.querySelector("#signup form"); if(lf && forms.indexOf(lf)<0) forms.push(lf);
+  for(var i=0;i<forms.length;i++){
+    (function(form){
+      if(form.__growLiveWired) return; form.__growLiveWired=1;
+      form.addEventListener("submit", function(){ postToGrow(form); }, true);
+      form.setAttribute("data-grow-live", "live-webhook");
+      form.setAttribute("data-google-sheet-id", window.AIGA_GROW_LIVE.googleSheet.spreadsheetId);
+      form.setAttribute("data-google-calendar-id", window.AIGA_GROW_LIVE.googleCalendar.calendarId);
+    })(forms[i]);
+  }
+})();
+}catch(e){ if(window.console) console.warn("Grow live settings failed:", e); }
+</script>
+
+<script>
+/* ===== Bolt issues the certificate only after 10-day completion ===== */
+try{
+(function(){
+  function setup(){
+    var cert=document.getElementById("boltCert");
+    var finish=document.getElementById("boltFinish");
+    if(!cert || !finish || cert.__issuerWired) return;
+    cert.__issuerWired=1;
+
+    var note=document.createElement("p");
+    note.setAttribute("data-bolt-issuer-note","1");
+    note.style.cssText="font-size:.76rem;line-height:1.55;margin:10px 0 0;opacity:.72";
+    note.textContent="Bolt issues the certificate only after the 10-day path is completed. Before that, this is a preview.";
+    cert.appendChild(note);
+
+    var dl=document.createElement("button");
+    dl.id="boltDownloadCert";
+    dl.type="button";
+    dl.disabled=true;
+    dl.textContent="Download certificate — locked until Day 10";
+    dl.style.cssText="margin-top:10px;width:100%;font:inherit;font-size:.8rem;font-weight:800;padding:11px 16px;border-radius:11px;cursor:not-allowed;border:1px solid var(--bolt-line);background:transparent;color:var(--bolt-fg);opacity:.55";
+    cert.appendChild(dl);
+
+    var progress=0;
+    finish.addEventListener("click", function(){
+      progress += 4;
+      if(progress>=10){
+        dl.disabled=false;
+        dl.textContent="Download / save certificate PDF →";
+        dl.style.cursor="pointer";
+        dl.style.opacity="1";
+        dl.style.background="var(--bolt-key)";
+        dl.style.borderColor="var(--bolt-key)";
+        dl.style.color="var(--bolt-keyfg)";
+        note.textContent="Issued by Bolt after completion of the 10-day AI Governance Foundations path. Click download and choose Save as PDF.";
+      }
+    }, true);
+
+    dl.addEventListener("click", function(){
+      if(dl.disabled) return;
+      try{
+        var W=window.Bolt;
+        if(W && W.sfx && W.sfx.cheer) W.sfx.cheer();
+        if(W && W.say) W.say("Certificate issued. Choose Save as PDF to download it. Now you are ready to go and conquer the AI world.", null, true);
+      }catch(e){}
+      window.print();
+    });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", function(){ setTimeout(setup,120); });
+  else setTimeout(setup,120);
+})();
+}catch(e){ if(window.console) console.warn("Bolt certificate issuer failed:", e); }
+</script>
+
+<script>
+/* ===== Certificate flow: confetti first, then click to get certificate ===== */
+try{
+(function(){
+  function setup(){
+    var cert=document.getElementById("boltCert");
+    var finish=document.getElementById("boltFinish");
+    var download=document.getElementById("boltDownloadCert");
+    if(!cert || !finish || cert.__confettiCertificateFlow) return;
+    cert.__confettiCertificateFlow=1;
+
+    if(download) download.textContent="Complete Day 10 to unlock certificate";
+    if(download) download.style.display="none";
+
+    var hint=document.createElement("p");
+    hint.id="boltCertHint";
+    hint.style.cssText="font-size:.78rem;line-height:1.6;margin:10px 0 0;opacity:.78";
+    hint.textContent="Click “Finish the 10 days 🎓” three times to complete the path — your certificate opens right after.";
+    cert.appendChild(hint);
+    var cue=document.createElement("p");
+    cue.id="boltCertificateCue";
+    var manual=document.createElement("p");
+    manual.id="boltCertManual";
+    manual.style.cssText="font-size:.72rem;line-height:1.55;margin:12px 0 0;opacity:.6";
+    manual.textContent="If the button does not appear after three clicks, reload the page and try again.";
+    cert.appendChild(manual);
+    cue.style.cssText="display:none;font-size:.82rem;line-height:1.6;margin:12px 0 0;font-weight:800;color:var(--bolt-key)";
+    cue.textContent="🎉 Confetti complete — now click below to get your certificate.";
+    cert.appendChild(cue);
+
+    var clicks=0;
+    finish.addEventListener("click", function(){
+      clicks += 1;
+      if(clicks>=3 && !cert.__day10Sent){
+        cert.__day10Sent=1;
+        try{
+          var cfg=window.AIGA_GROW_LIVE;
+          var who=(document.getElementById("boltWho")||{}).value || "";
+          who=String(who).trim() || "Unnamed learner";
+          var email="";
+          var ei=document.getElementById("signupform")||document.querySelector("#signup form");
+          if(ei){ var f=ei.querySelector('input[type="email"]'); if(f) email=f.value||""; }
+          if(cfg && cfg.webhookUrl && window.fetch){
+            fetch(cfg.webhookUrl,{
+              method:"POST",
+              headers:{"Content-Type":"application/json"},
+              body:JSON.stringify({
+                event:"certificate.day10.completed",
+                certificateTriggered:true,
+                learnerName:who,
+                email:email,
+                package:cfg.package? cfg.package.name : "Foundations",
+                priceUsd:cfg.package? cfg.package.priceUsd : 29,
+                paymentStatus:"paid",
+                completion:"10 / 10 days",
+                source:"landing-page",
+                gmailAccount:cfg.gmailAccount,
+                googleSheetId:cfg.googleSheet? cfg.googleSheet.spreadsheetId : "",
+                googleCalendarId:cfg.googleCalendar? cfg.googleCalendar.calendarId : "",
+                requestCertificate:true,
+                timestamp:new Date().toISOString()
+              })
+            }).catch(function(err){ if(window.console) console.warn("Day 10 webhook failed:", err); });
+          }
+        }catch(e){ if(window.console) console.warn("Day 10 dispatch failed:", e); }
+      }
+      if(clicks>=3){
+        setTimeout(function(){
+          try{
+            var W=window.Bolt;
+            if(W && W.confetti) W.confetti("cannons");
+            if(W && W.say) W.say("Confetti first. Now click the certificate button and I will issue it. Woof!", null, true);
+          }catch(e){}
+          cue.style.display="block";
+          var dl=document.getElementById("boltDownloadCert");
+          if(dl){
+            dl.style.display="block";
+            dl.disabled=false;
+            dl.textContent="Click to get your certificate →";
+            dl.style.cursor="pointer";
+            dl.style.opacity="1";
+            dl.style.background="var(--bolt-key)";
+            dl.style.borderColor="var(--bolt-key)";
+            dl.style.color="var(--bolt-keyfg)";
+          }
+        },260);
+      }
+    }, true);
+
+    var dlRef=download || document.getElementById("boltDownloadCert");
+    if(dlRef) dlRef.addEventListener("click", function(){
+      var d=document.getElementById("boltDownloadCert");
+      if(d && d.disabled) return;
+      try{
+        var W=window.Bolt;
+        if(W && W.sfx && W.sfx.cheer) W.sfx.cheer();
+        if(W && W.say) W.say("Certificate issued. Choose Save as PDF to download it. Now you are ready to go and conquer the AI world.", null, true);
+      }catch(e){}
+    }, true);
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", function(){ setTimeout(setup,260); });
+  else setTimeout(setup,260);
+})();
+}catch(e){ if(window.console) console.warn("Certificate confetti flow failed:", e); }
+</script>
+
+<script>
+/* ===== Direct certificate download: creates an HTML certificate file ===== */
+try{
+(function(){
+  function safe(s){ return (s||"").replace(/[<>]/g,"").trim(); }
+  function slug(s){ return safe(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "graduate"; }
+  function certificateHtml(name){
+    var today=new Date().toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"});
+    var certId="AIGA-"+new Date().getFullYear()+"-"+String(Date.now()).slice(-6);
+    return '<!doctype html><html><head><meta charset="utf-8"><title>AI Governance Academy Certificate</title>'+
+      '<style>body{margin:0;background:#f8fafc;font-family:Georgia,serif;color:#0f172a}.cert{max-width:920px;margin:40px auto;padding:56px;border:10px solid #c8a24a;background:#fff;box-shadow:0 24px 80px rgba(15,23,42,.18)}.ey{letter-spacing:.2em;text-transform:uppercase;color:#64748b;font:700 12px Arial,sans-serif}.title{font-size:48px;margin:18px 0 8px}.sub{font:16px Arial,sans-serif;color:#475569;line-height:1.7}.name{font-size:42px;margin:30px 0 16px;border-bottom:2px solid #c8a24a;display:inline-block;padding:0 36px 8px}.programme{font-size:24px;margin:18px 0}.foot{display:flex;justify-content:space-between;gap:24px;margin-top:48px;font:13px Arial,sans-serif;color:#475569}.bolt{margin-top:28px;font:700 15px Arial,sans-serif;color:#4338ca}</style></head><body>'+
+      '<main class="cert"><div class="ey">The Governance Academy</div><h1 class="title">Certificate of Completion</h1><p class="sub">Awarded to</p><div class="name">'+name+'</div><div class="programme">AI Governance Expert</div><p class="sub">for completing the 10-day programme across <b>NIST AI RMF</b> and the <b>EU AI Act</b>.</p><p class="bolt">Issued by Bolt, the Governance Academy certificate desk.</p><div class="foot"><span>Certificate ID: '+certId+'</span><span>Issued: '+today+'</span><span>Completion: 10 / 10 days</span></div></main>'+
+      '<scr"+"ipt>window.onload=function(){setTimeout(function(){window.print()},300)}<\/scr"+"ipt></body></html>';
+  }
+  function setup(){
+    var cert=document.getElementById("boltCert");
+    var btn=document.getElementById("boltDownloadCert");
+    if(!cert || !btn || btn.__directDownload) return;
+    btn.__directDownload=1;
+    btn.addEventListener("click", function(e){
+      if(btn.disabled) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var input=document.getElementById("boltWho");
+      var name=safe(input && input.value) || safe((document.getElementById("boltWhoOut")||{}).textContent) || "AI Governance Graduate";
+      if(name==="[ Your Name ]") name="AI Governance Graduate";
+      var blob=new Blob([certificateHtml(name)],{type:"text/html;charset=utf-8"});
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement("a");
+      a.href=url;
+      a.download="ai-governance-certificate-"+slug(name)+".html";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function(){ URL.revokeObjectURL(url); if(a.parentNode) a.parentNode.removeChild(a); },1200);
+      try{
+        var W=window.Bolt;
+        if(W && W.say) W.say("Certificate downloaded. Open the file and choose Save as PDF if you want a PDF copy. Woof!", null, true);
+      }catch(err){}
+    }, true);
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", function(){ setTimeout(setup,420); });
+  else setTimeout(setup,420);
+})();
+}catch(e){ if(window.console) console.warn("Direct certificate download failed:", e); }
+</script>
+</body>
+</html>
